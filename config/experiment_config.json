@@ -1,0 +1,32 @@
+{
+  "project_name": "green-llm-token-research",
+
+  "dataset": {
+    "target_task_count": 500,
+    "categories": 5,
+    "tasks_per_category": 100
+  },
+
+  "experiment": {
+    "variants": [
+      "baseline",
+      "optimized"
+    ],
+    "runs_per_variant": 1
+  },
+
+  "model": {
+    "provider": "",
+    "model_name": "",
+    "temperature": 0,
+    "max_output_tokens": null
+  },
+
+  "paths": {
+    "prompts": "data/prompts/prompts.csv",
+    "raw_runs": "data/raw/runs.jsonl",
+    "quality_scores": "data/evaluation/quality_scores.csv",
+    "processed_results": "data/processed/results.csv",
+    "logs": "logs"
+  }
+}

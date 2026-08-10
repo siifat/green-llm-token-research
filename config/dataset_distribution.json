@@ -1,0 +1,102 @@
+{
+  "total_tasks": 500,
+
+  "categories": {
+    "assignment_writing": {
+      "target": 100,
+      "subjects": [
+        "Computer Science",
+        "Mathematics",
+        "Physics",
+        "Biology",
+        "Chemistry",
+        "Engineering",
+        "Business",
+        "Economics",
+        "Statistics",
+        "Social Science"
+      ],
+      "tasks_per_subject": 10
+    },
+
+    "exam_preparation": {
+      "target": 100,
+      "subjects": [
+        "Computer Science",
+        "Mathematics",
+        "Physics",
+        "Biology",
+        "Chemistry",
+        "Engineering",
+        "Business",
+        "Economics",
+        "Statistics",
+        "Social Science"
+      ],
+      "tasks_per_subject": 10
+    },
+
+    "programming_help": {
+      "target": 100,
+      "subjects": [
+        "Computer Science",
+        "Data Science",
+        "Statistics",
+        "Mathematics",
+        "Engineering",
+        "Physics",
+        "Computational Biology",
+        "Economics",
+        "Business Analytics",
+        "Scientific Computing"
+      ],
+      "tasks_per_subject": 10
+    },
+
+    "concept_learning": {
+      "target": 100,
+      "subjects": [
+        "Computer Science",
+        "Mathematics",
+        "Physics",
+        "Biology",
+        "Chemistry",
+        "Engineering",
+        "Business",
+        "Economics",
+        "Statistics",
+        "Social Science"
+      ],
+      "tasks_per_subject": 10
+    },
+
+    "research_paper_summarization": {
+      "target": 100,
+      "subjects": [
+        "Computer Science",
+        "Mathematics",
+        "Physics",
+        "Biology",
+        "Chemistry",
+        "Engineering",
+        "Business",
+        "Economics",
+        "Statistics",
+        "Social Science"
+      ],
+      "tasks_per_subject": 10
+    }
+  },
+
+  "difficulty_distribution_per_10_tasks": {
+    "introductory": 4,
+    "intermediate": 4,
+    "advanced": 2
+  },
+
+  "final_difficulty_targets": {
+    "introductory": 200,
+    "intermediate": 200,
+    "advanced": 100
+  }
+}

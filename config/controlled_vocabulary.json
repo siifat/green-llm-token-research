@@ -1,0 +1,42 @@
+{
+  "category": [
+    "assignment_writing",
+    "exam_preparation",
+    "programming_help",
+    "concept_learning",
+    "research_paper_summarization"
+  ],
+
+  "academic_context_type": [
+    "course_assignment",
+    "exam_preparation",
+    "course_learning",
+    "lab_coursework",
+    "formal_research"
+  ],
+
+  "optimization_strategy": [
+    "remove_redundancy",
+    "remove_irrelevant_context",
+    "reduce_requested_detail",
+    "clarify_task",
+    "specify_output_scope",
+    "remove_repeated_instructions",
+    "replace_verbose_wording",
+    "target_relevant_section",
+    "combined"
+  ],
+
+  "status": [
+    "draft",
+    "reviewed",
+    "approved",
+    "rejected"
+  ],
+  
+  "difficulty": [
+  "introductory",
+  "intermediate",
+  "advanced"
+  ]
+}

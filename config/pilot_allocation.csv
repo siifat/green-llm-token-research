@@ -1,0 +1,21 @@
+prompt_id,creator_id,reviewer_id,category,subject_area,difficulty,academic_context_type
+P0001,Member01,Member02,assignment_writing,Computer Science,introductory,course_assignment
+P0002,Member02,Member03,assignment_writing,Biology,intermediate,course_assignment
+P0003,Member03,Member04,assignment_writing,Business,introductory,course_assignment
+P0004,Member04,Member01,assignment_writing,Engineering,advanced,course_assignment
+P0005,Member01,Member02,exam_preparation,Mathematics,intermediate,exam_preparation
+P0006,Member02,Member03,exam_preparation,Chemistry,introductory,exam_preparation
+P0007,Member03,Member04,exam_preparation,Economics,advanced,exam_preparation
+P0008,Member04,Member01,exam_preparation,Physics,introductory,exam_preparation
+P0009,Member01,Member02,programming_help,Computer Science,advanced,lab_coursework
+P0010,Member02,Member03,programming_help,Statistics,introductory,lab_coursework
+P0011,Member03,Member04,programming_help,Engineering,intermediate,lab_coursework
+P0012,Member04,Member01,programming_help,Data Science,intermediate,lab_coursework
+P0013,Member01,Member02,concept_learning,Physics,introductory,course_learning
+P0014,Member02,Member03,concept_learning,Economics,intermediate,course_learning
+P0015,Member03,Member04,concept_learning,Biology,intermediate,course_learning
+P0016,Member04,Member01,concept_learning,Statistics,introductory,course_learning
+P0017,Member01,Member02,research_paper_summarization,Computer Science,intermediate,formal_research
+P0018,Member02,Member03,research_paper_summarization,Chemistry,advanced,formal_research
+P0019,Member03,Member04,research_paper_summarization,Social Science,introductory,formal_research
+P0020,Member04,Member01,research_paper_summarization,Mathematics,intermediate,formal_research

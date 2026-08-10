@@ -1,0 +1,11 @@
+field,data_type,required,rule,example
+evaluation_id,string,yes,"Unique evaluation record ID","E000001"
+run_id,string,yes,"Must correspond to a run in runs.jsonl","R000001"
+prompt_id,string,yes,"Must correspond to a task in prompts.csv","P0001"
+variant,string,yes,"Either baseline or optimized","baseline"
+evaluator_id,string,yes,"Identifier of the person performing the evaluation","Evaluator01"
+accuracy,integer,yes,"Integer score from 1 to 5","4"
+completeness,integer,yes,"Integer score from 1 to 5","5"
+educational_usefulness,integer,yes,"Integer score from 1 to 5","4"
+overall_comment,string,no,"Short justification or observation about the response","Correct and useful but unnecessarily verbose"
+evaluation_timestamp,string,yes,"Timestamp in ISO 8601 format","2026-08-10T21:15:00+06:00"
