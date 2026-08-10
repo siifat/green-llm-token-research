@@ -1,180 +1,110 @@
-\# Green LLM Token Research
+# Green LLM Token Research
 
-
-
-\## Project Title
-
-
+## Project Title
 
 Reducing Token Waste in Student LLM Use for University Learning Tasks:
 
 Implications for Sustainable AI Computing
 
-
-
-\## Project Purpose
-
-
+## Project Purpose
 
 This project investigates whether unnecessary token consumption in university-related LLM interactions can be reduced through prompt optimization while preserving response quality and educational usefulness.
 
-
-
 The study compares baseline prompts with optimized prompts for the same underlying academic task.
 
-
-
-\## Dataset Design
-
-
+## Dataset Design
 
 Target:
 
+- 500 underlying university-learning tasks
 
+- 5 task categories
 
-\- 500 underlying university-learning tasks
+- 100 tasks per category
 
-\- 5 task categories
+- 2 prompt variants per task:
 
-\- 100 tasks per category
+  - baseline
 
-\- 2 prompt variants per task:
+  - optimized
 
-&#x20; - baseline
-
-&#x20; - optimized
-
-\- 1 primary execution per variant
-
-
+- 1 primary execution per variant
 
 Expected primary LLM executions:
 
-
-
 500 × 2 = 1,000 runs
 
+## Task Categories
 
+1. assignment_writing
 
-\## Task Categories
+2. exam_preparation
 
+3. programming_help
 
+4. concept_learning
 
-1\. assignment\_writing
+5. research_paper_summarization
 
-2\. exam\_preparation
-
-3\. programming\_help
-
-4\. concept\_learning
-
-5\. research\_paper\_summarization
-
-
-
-\## Academic Scope
-
-
+## Academic Scope
 
 A task is included only when its experimental context explicitly connects the LLM interaction to a university course, assessment, examination, coursework, laboratory activity, or formal research activity.
 
-
-
 Academic classification is based on the stated purpose and context of the interaction rather than on prompt subject matter alone.
-
-
 
 Ambiguous general-purpose tasks are excluded.
 
+## Data Files
 
-
-\## Data Files
-
-
-
-\### data/prompts/prompts.csv
-
-
+### data/prompts/prompts.csv
 
 Master dataset containing the 500 experimental tasks.
 
-
-
 Each task contains:
 
+- academic context
 
+- underlying task
 
-\- academic context
+- baseline prompt
 
-\- underlying task
+- optimized prompt
 
-\- baseline prompt
+- optimization strategy
 
-\- optimized prompt
+- expected content
 
-\- optimization strategy
+- metadata
 
-\- expected content
-
-\- metadata
-
-
-
-\### data/raw/runs.jsonl
-
-
+### data/raw/runs.jsonl
 
 Raw LLM execution data.
 
-
-
 Each line represents one model execution.
-
-
 
 Raw experiment data must never be manually modified or overwritten.
 
-
-
-\### data/evaluation/quality\_scores.csv
-
-
+### data/evaluation/quality_scores.csv
 
 Human evaluation scores for generated responses.
 
-
-
 Evaluation dimensions:
 
+- accuracy
 
+- completeness
 
-\- accuracy
-
-\- completeness
-
-\- educational\_usefulness
-
-
+- educational_usefulness
 
 All dimensions use integer scores from 1 to 5.
 
-
-
-\### data/processed/results.csv
-
-
+### data/processed/results.csv
 
 Processed paired results comparing baseline and optimized executions.
 
-
-
 This file will be generated automatically by analysis scripts.
 
-
-
-\## Project Structure
-
-
+## Project Structure
 
 green-llm-token-research/
 
@@ -192,7 +122,7 @@ green-llm-token-research/
 
 │   ├── evaluation/
 
-│   │   └── quality\_scores.csv
+│   │   └── quality_scores.csv
 
 │   └── processed/
 
@@ -206,13 +136,13 @@ green-llm-token-research/
 
 │   ├── code/
 
-│   └── assignment\_materials/
+│   └── assignment_materials/
 
 │
 
 ├── scripts/
 
-│   └── validate\_prompts.py
+│   └── validate_prompts.py
 
 │
 
@@ -230,73 +160,48 @@ green-llm-token-research/
 
 ├── config/
 
-│   ├── controlled\_vocabulary.json
+│   ├── controlled_vocabulary.json
 
-│   ├── data\_dictionary.csv
+│   ├── data_dictionary.csv
 
-│   ├── run\_data\_dictionary.csv
+│   ├── run_data_dictionary.csv
 
-│   ├── quality\_data\_dictionary.csv
+│   ├── quality_data_dictionary.csv
 
-│   ├── results\_data\_dictionary.csv
+│   ├── results_data_dictionary.csv
 
-│   ├── experiment\_config.json
+│   ├── experiment_config.json
 
-│   └── quality\_rubric.md
+│   └── quality_rubric.md
 
 │
 
 └── README.md
 
+## Experimental Principles
 
+1. Baseline and optimized prompts must represent the same underlying task.
 
-\## Experimental Principles
+2. Prompt optimization must not intentionally change the required educational outcome.
 
+3. Raw experimental outputs must never be overwritten.
 
+4. Failed executions and retries must remain recorded.
 
-1\. Baseline and optimized prompts must represent the same underlying task.
+5. Token counts and latency are directly measured experimental variables.
 
+6. Quality is evaluated separately using the predefined human evaluation rubric.
 
+7. Environmental and computational implications are estimated separately from directly measured variables.
 
-2\. Prompt optimization must not intentionally change the required educational outcome.
+8. Dataset validation must pass before experiments are executed.
 
-
-
-3\. Raw experimental outputs must never be overwritten.
-
-
-
-4\. Failed executions and retries must remain recorded.
-
-
-
-5\. Token counts and latency are directly measured experimental variables.
-
-
-
-6\. Quality is evaluated separately using the predefined human evaluation rubric.
-
-
-
-7\. Environmental and computational implications are estimated separately from directly measured variables.
-
-
-
-8\. Dataset validation must pass before experiments are executed.
-
-
-
-\## Dataset Validation
-
-
+## Dataset Validation
 
 Run:
 
-
-
-python scripts/validate\_prompts.py
-
-
+```bash
+python scripts/validate_prompts.py
+```
 
 The main experiment must not begin if validation reports blocking errors.
-
