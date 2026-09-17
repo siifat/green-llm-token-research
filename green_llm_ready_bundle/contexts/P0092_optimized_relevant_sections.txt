@@ -1,0 +1,17 @@
+TITLE: Trust and Continued Use of AI Study Assistants among Undergraduates
+AUTHORS: Bennett, C.; Chowdhury, F.; Lin, Z.
+YEAR: 2026
+
+1. INTRODUCTION
+AI study assistants are increasingly used for explanation, drafting, and revision, yet continued use may depend on more than perceived usefulness. Trust is especially important when students cannot directly verify every generated statement.
+
+The study addresses the following research questions:
+RQ1. How is perceived response accuracy associated with student trust in AI study assistants?
+RQ2. How is perceived transparency associated with student trust in AI study assistants?
+RQ3. How are privacy concerns associated with student trust and intended continued use?
+
+The preregistered hypotheses were:
+H1. Higher perceived response accuracy is positively associated with trust.
+H2. Higher perceived transparency is positively associated with trust.
+H3. Greater privacy concern is negatively associated with trust.
+H4. Higher trust is positively associated with intention to continue using the AI study assistant.

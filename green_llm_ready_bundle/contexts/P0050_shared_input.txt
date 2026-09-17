@@ -1,0 +1,17 @@
+REGEX DEBUGGING INPUT
+Original faulty Python regex:
+^\w+@\w+\.\w+$
+
+Examples that should be VALID:
+alice.smith+lab@uni.edu
+student@cs.example.ac.uk
+user_42@example.com
+
+Examples that should be INVALID:
+user@
+@example.com
+a b@example.com
+user@example
+user..name@example.com
+
+Goal: Explain what the original pattern does, identify why it mishandles realistic addresses, and provide a more practical classroom-level replacement. The replacement does not need to implement the full RFC email grammar.

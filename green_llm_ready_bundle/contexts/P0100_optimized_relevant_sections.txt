@@ -1,0 +1,8 @@
+TITLE: Structured Pruning for Low-Power Edge Vision
+AUTHORS: Diaz, M.; Ito, S.; Ncube, P.
+YEAR: 2025
+
+6. CONCLUSION
+Structured pruning can materially reduce edge inference energy when sparsity remains within a range that preserves accuracy.
+7. FUTURE WORK
+Future work should evaluate joint pruning and quantization, dynamic sparsity that adapts to image difficulty, thermal behavior during long deployments, and performance on larger vision datasets.

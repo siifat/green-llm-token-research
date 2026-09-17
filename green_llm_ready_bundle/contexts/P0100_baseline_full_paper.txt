@@ -1,0 +1,35 @@
+TITLE: Structured Pruning for Low-Power Edge Vision
+AUTHORS: Diaz, M.; Ito, S.; Ncube, P.
+YEAR: 2025
+
+ABSTRACT
+We evaluate structured channel pruning for image classification on low-power edge hardware. A 45% pruned convolutional network reduced measured inference energy by 36% while losing 1.3 percentage points of top-1 accuracy. More aggressive pruning produced diminishing energy benefits and a larger accuracy decline.
+
+1. INTRODUCTION
+Edge vision systems operate under strict power and thermal limits. Structured pruning removes channels or filters so standard hardware can execute a smaller dense network without irregular sparsity overhead.
+
+2. RELATED WORK
+Prior pruning research often reports parameter count and FLOPs, while fewer studies report measured device energy.
+
+3. METHODS
+A ResNet-style classifier was trained on CIFAR-100 and pruned at 20%, 45%, and 65% channel sparsity. Models were fine-tuned for 30 epochs after pruning. Inference was measured on a Jetson Orin Nano at fixed power mode. Metrics included top-1 accuracy, latency, peak memory, and joules per 1,000 images.
+
+4. RESULTS
+The unpruned model achieved 78.6% accuracy and used 52 J per 1,000 images. At 45% pruning, accuracy was 77.3% and energy 33 J. At 65%, accuracy fell to 72.8% while energy improved only to 29 J.
+
+5. DISCUSSION
+Moderate structured pruning offered the best trade-off. Results may differ for transformer vision models and other hardware.
+
+6. CONCLUSION
+Structured pruning can materially reduce edge inference energy when sparsity remains within a range that preserves accuracy.
+
+7. FUTURE WORK
+Future work should evaluate joint pruning and quantization, dynamic sparsity that adapts to image difficulty, thermal behavior during long deployments, and performance on larger vision datasets.
+
+APPENDIX A. REPRODUCIBILITY AND REPORTING NOTES
+
+The experimental workflow was logged from data preparation through analysis so that the main comparisons could be reconstructed. Random seeds, model or software versions, preprocessing decisions, and evaluation settings were fixed before the final run. Pilot executions were used only to verify the pipeline and were not mixed with the reported measurements. Intermediate outputs were retained rather than overwritten so that anomalous observations could be traced to their source.
+
+The authors also recorded several contextual variables that were not central to the primary research question. These included runtime environment information, routine validation checks, and descriptive summaries used to detect data-entry or processing mistakes. Such details improve auditability but are not necessary for understanding the headline result. Where measurements depended on hardware or institutional conditions, the paper treats absolute values as setting-specific and emphasizes the relative comparison made under matched conditions.
+
+For replication, future investigators are advised to preserve the same task definitions while independently re-running the analysis on different hardware, datasets, or student populations. The paper distinguishes direct measurements from derived estimates and avoids treating a reduction in one proxy metric as an identical reduction in environmental impact. This distinction is important because energy, latency, carbon intensity, and model quality can change at different rates.

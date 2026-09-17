@@ -1,0 +1,95 @@
+TITLE: Eight-Bit Quantization for Sustainable Language-Model Inference
+AUTHORS: Seo, J.; Malik, T.
+YEAR: 2025
+
+ABSTRACT
+We measure the effect of 8-bit quantization on a 7B instruction model across summarization and question answering. INT8 reduced GPU energy per response by 27% and memory by 42%, while average quality fell by 0.6 percentage points.
+
+1. INTRODUCTION
+Model precision is one of the most direct controls over memory traffic and arithmetic cost during inference.
+
+2. RELATED WORK
+Quantization studies consistently show memory savings, but energy gains vary by accelerator and implementation.
+
+3. METHODS
+A 7B model was evaluated in FP16 and INT8 on 2,000 prompts with greedy decoding. We measured joules per response, latency, memory, and task quality.
+
+4. RESULTS
+INT8 used 27% less energy and 42% less memory, with a small quality loss. Latency improved by 19%.
+
+5. DISCUSSION
+Benefits depend on hardware support for low-precision kernels.
+
+6. CONCLUSION
+INT8 quantization offers a strong efficiency-quality trade-off on supported accelerators.
+
+7. FUTURE WORK
+Mixed precision should be evaluated for reasoning-heavy layers.
+
+================================================================================
+
+TITLE: Semantic Response Caching for Repeated LLM Requests
+AUTHORS: Abebe, S.; Martin, G.
+YEAR: 2025
+
+ABSTRACT
+We evaluate semantic caching on 50,000 service requests. Reusing prior responses avoided 34% of model calls and reduced total service energy by 24%, but stale answers appeared when source information changed.
+
+1. INTRODUCTION
+Repeated or near-duplicate user requests create opportunities to avoid generation entirely.
+
+2. RELATED WORK
+Exact caching is common in web systems; semantic caching extends reuse to paraphrased requests.
+
+3. METHODS
+Incoming requests were embedded and matched to cached queries. A similarity threshold was tuned on held-out data. Energy, latency, cache hit rate, and incorrect reuse were measured.
+
+4. RESULTS
+The cache hit rate was 34%. Energy fell 24% and median latency fell 48%. Incorrect reuse was 1.9%, mostly for time-sensitive questions.
+
+5. DISCUSSION
+Caching saves more energy when workloads repeat, but freshness controls are essential.
+
+6. CONCLUSION
+Semantic caching can outperform purely model-level optimization for repetitive workloads by avoiding inference altogether.
+
+7. FUTURE WORK
+Future work should combine semantic similarity with source-version metadata.
+
+================================================================================
+
+TITLE: Carbon-Intensity-Aware Routing for Distributed AI Inference
+AUTHORS: Taylor, N.; Sato, Y.
+YEAR: 2025
+
+ABSTRACT
+We route flexible inference requests among three regions using hourly electricity carbon intensity. Emissions fell 18% with unchanged model quality, but network transfer and regional capacity limited further gains.
+
+1. INTRODUCTION
+Operational emissions depend on the carbon intensity of electricity used at inference time.
+
+2. RELATED WORK
+Carbon-aware cloud scheduling has been studied for batch computing, while interactive model serving adds latency constraints.
+
+3. METHODS
+Requests with a 500 ms latency budget could be routed only to regions satisfying round-trip delay and capacity constraints. The router minimized estimated grams CO2e per request.
+
+4. RESULTS
+Estimated emissions fell 18%. Energy per inference changed by less than 2%, showing that emissions reduction came mainly from cleaner electricity rather than lower computation.
+
+5. DISCUSSION
+Routing cannot eliminate emissions and may conflict with data residency or latency requirements.
+
+6. CONCLUSION
+Carbon-aware routing complements efficiency techniques but optimizes emissions rather than compute demand itself.
+
+7. FUTURE WORK
+Future work should combine routing with quantization and renewable forecasts.
+
+APPENDIX A. REPRODUCIBILITY AND REPORTING NOTES
+
+The experimental workflow was logged from data preparation through analysis so that the main comparisons could be reconstructed. Random seeds, model or software versions, preprocessing decisions, and evaluation settings were fixed before the final run. Pilot executions were used only to verify the pipeline and were not mixed with the reported measurements. Intermediate outputs were retained rather than overwritten so that anomalous observations could be traced to their source.
+
+The authors also recorded several contextual variables that were not central to the primary research question. These included runtime environment information, routine validation checks, and descriptive summaries used to detect data-entry or processing mistakes. Such details improve auditability but are not necessary for understanding the headline result. Where measurements depended on hardware or institutional conditions, the paper treats absolute values as setting-specific and emphasizes the relative comparison made under matched conditions.
+
+For replication, future investigators are advised to preserve the same task definitions while independently re-running the analysis on different hardware, datasets, or student populations. The paper distinguishes direct measurements from derived estimates and avoids treating a reduction in one proxy metric as an identical reduction in environmental impact. This distinction is important because energy, latency, carbon intensity, and model quality can change at different rates.

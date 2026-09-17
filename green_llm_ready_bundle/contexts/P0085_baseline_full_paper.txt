@@ -1,0 +1,35 @@
+TITLE: Student Reliance on AI Code Assistants in Introductory Programming
+AUTHORS: Khan, L.; Murray, T.; Bose, S.
+YEAR: 2025
+
+ABSTRACT
+We surveyed 412 first-year programming students about use of AI code assistants and compared self-reported reliance with performance on a supervised debugging exercise. Frequent users reported higher confidence but were more likely to accept a plausible incorrect suggestion in the exercise. The study identifies a need for explicit verification skills when AI tools are integrated into programming courses.
+
+1. INTRODUCTION
+AI code assistants can accelerate routine programming tasks, yet novices may lack the expertise needed to verify generated code. This study examines whether frequency of use is associated with confidence, verification behavior, and debugging performance.
+
+2. RELATED WORK
+Prior studies have documented rapid adoption of code-generation tools and mixed effects on learning. Research on automation bias suggests that novice users may defer to confident system outputs even when those outputs are wrong.
+
+3. METHODS
+Participants were 412 students enrolled in introductory Python courses at two universities. An online survey measured frequency of AI-assistant use and confidence. Students then completed a 25-minute supervised debugging task containing one intentionally misleading AI suggestion. We compared acceptance rates and task scores across low-, medium-, and high-use groups.
+
+4. RESULTS
+High-use students reported higher confidence (mean 4.1/5) than low-use students (3.3/5). However, 38% of high-use students accepted the misleading suggestion compared with 21% of low-use students. Overall debugging scores differed only modestly between groups.
+
+5. DISCUSSION
+The study relies partly on self-reported usage and cannot establish that AI use caused the observed behaviors. The supervised task represents only one type of programming activity. Participants came from two institutions and were mostly first-year students, limiting generalizability.
+
+6. CONCLUSION
+AI code assistants may increase confidence without guaranteeing stronger verification. Introductory courses should teach students to test and inspect generated code rather than treating tool output as authoritative.
+
+7. FUTURE WORK
+Longitudinal studies should examine whether verification skills improve with structured instruction and whether the same pattern appears in advanced courses.
+
+APPENDIX A. REPRODUCIBILITY AND REPORTING NOTES
+
+The experimental workflow was logged from data preparation through analysis so that the main comparisons could be reconstructed. Random seeds, model or software versions, preprocessing decisions, and evaluation settings were fixed before the final run. Pilot executions were used only to verify the pipeline and were not mixed with the reported measurements. Intermediate outputs were retained rather than overwritten so that anomalous observations could be traced to their source.
+
+The authors also recorded several contextual variables that were not central to the primary research question. These included runtime environment information, routine validation checks, and descriptive summaries used to detect data-entry or processing mistakes. Such details improve auditability but are not necessary for understanding the headline result. Where measurements depended on hardware or institutional conditions, the paper treats absolute values as setting-specific and emphasizes the relative comparison made under matched conditions.
+
+For replication, future investigators are advised to preserve the same task definitions while independently re-running the analysis on different hardware, datasets, or student populations. The paper distinguishes direct measurements from derived estimates and avoids treating a reduction in one proxy metric as an identical reduction in environmental impact. This distinction is important because energy, latency, carbon intensity, and model quality can change at different rates.

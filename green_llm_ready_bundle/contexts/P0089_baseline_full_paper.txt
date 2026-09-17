@@ -1,0 +1,35 @@
+TITLE: Water-Aware Scheduling for AI Training Clusters
+AUTHORS: Yamada, T.; Hassan, R.; Price, L.
+YEAR: 2025
+
+ABSTRACT
+We study whether AI training jobs can be shifted across time to reduce cooling-water consumption. Using hourly weather and datacenter water-use traces, a scheduler delayed flexible jobs within 12-hour deadlines. Simulated annual water consumption fell by 17% with less than 2% increase in electricity use.
+
+1. INTRODUCTION
+Water consumption from datacenter cooling varies with ambient conditions and cooling technology. AI training jobs often run for hours and some can tolerate delayed start times, creating an opportunity for water-aware scheduling.
+
+2. RELATED WORK
+Carbon-aware computing has motivated time shifting based on grid intensity. Water-aware scheduling is less developed and can conflict with energy or carbon objectives.
+
+3. METHODS
+We simulated a 256-GPU cluster using one year of hourly workload demand, wet-bulb temperature, and measured water usage effectiveness. Jobs were labeled rigid or flexible. The scheduler minimized projected cooling water subject to GPU capacity and job deadlines.
+
+4. RESULTS
+Water use fell 17% relative to immediate scheduling. Electricity increased 1.8% because some low-water periods had slightly worse cooling energy efficiency. Ninety-one percent of flexible jobs started within four hours of arrival.
+
+5. DISCUSSION
+Optimizing one environmental metric can worsen another. Water intensity estimates were site-specific, and the study did not model regional water scarcity.
+
+6. CONCLUSION
+Time shifting can reduce cooling-water consumption for flexible AI workloads, but water, energy, and carbon should be optimized jointly.
+
+7. FUTURE WORK
+Future work should incorporate local water scarcity weights, carbon intensity, and multi-site routing.
+
+APPENDIX A. REPRODUCIBILITY AND REPORTING NOTES
+
+The experimental workflow was logged from data preparation through analysis so that the main comparisons could be reconstructed. Random seeds, model or software versions, preprocessing decisions, and evaluation settings were fixed before the final run. Pilot executions were used only to verify the pipeline and were not mixed with the reported measurements. Intermediate outputs were retained rather than overwritten so that anomalous observations could be traced to their source.
+
+The authors also recorded several contextual variables that were not central to the primary research question. These included runtime environment information, routine validation checks, and descriptive summaries used to detect data-entry or processing mistakes. Such details improve auditability but are not necessary for understanding the headline result. Where measurements depended on hardware or institutional conditions, the paper treats absolute values as setting-specific and emphasizes the relative comparison made under matched conditions.
+
+For replication, future investigators are advised to preserve the same task definitions while independently re-running the analysis on different hardware, datasets, or student populations. The paper distinguishes direct measurements from derived estimates and avoids treating a reduction in one proxy metric as an identical reduction in environmental impact. This distinction is important because energy, latency, carbon intensity, and model quality can change at different rates.

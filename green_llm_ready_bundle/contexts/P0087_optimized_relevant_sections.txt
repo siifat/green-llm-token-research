@@ -1,0 +1,8 @@
+TITLE: Automated Formative Feedback for Graduate Statistics Students
+AUTHORS: Park, J.; Idris, F.; Wilson, E.
+YEAR: 2025
+
+3. METHODS
+Two consecutive course cohorts were assigned by semester rather than individual randomization. The intervention group contained 58 students and the comparison group 55. Both completed the same regression assignment and final exam. The intervention group received AI feedback reviewed by an instructor before release. Outcomes were a 10-point interpretation task and a 100-point final exam.
+4. RESULTS
+The interpretation task improved by 1.8 points in the AI-feedback group and 0.7 points in the comparison group. The between-group difference in gain was significant at p=0.03. Final exam means were 78.4 and 77.1, a non-significant difference at p=0.41. Two AI feedback items required instructor correction before release.

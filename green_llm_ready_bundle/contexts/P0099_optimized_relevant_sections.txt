@@ -1,0 +1,8 @@
+TITLE: Interpretable Machine Learning for Hospital Readmission Prediction
+AUTHORS: Moreno, L.; Shah, D.; Peters, A.
+YEAR: 2025
+
+ABSTRACT
+We compare interpretable and black-box models for predicting 30-day hospital readmission from electronic health records. Gradient boosting achieved AUROC 0.79, while logistic regression achieved 0.75. Calibration and subgroup analysis showed that the simpler model remained competitive for deployment decisions.
+6. CONCLUSION
+Model selection for clinical prediction should consider calibration and interpretability alongside discrimination.

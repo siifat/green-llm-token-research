@@ -1,0 +1,35 @@
+TITLE: Energy-Aware Quantization for Campus Language-Model Services
+AUTHORS: Okafor, N.; Silva, P.; Ahmed, R.
+YEAR: 2025
+
+ABSTRACT
+Universities increasingly host language models for student support, creating demand for lower-cost inference. We evaluate 16-bit, 8-bit, and 4-bit quantization on a campus question-answering workload. A 7-billion-parameter model was tested on 6,000 anonymized course questions. Eight-bit quantization reduced GPU energy per response by 31% with less than one percentage point loss in answer accuracy; 4-bit quantization reduced energy by 46% but produced a larger quality drop on mathematical questions.
+
+1. INTRODUCTION
+Campus-hosted AI services face budget, latency, and sustainability constraints. Quantization reduces numerical precision and can lower memory traffic and compute cost, but overly aggressive quantization may harm response quality. We therefore evaluate the energy-quality trade-off under a realistic educational workload.
+
+2. RELATED WORK
+Previous quantization studies report substantial memory savings, while green-computing studies recommend reporting both energy and task quality. Few studies evaluate these trade-offs specifically for university question-answering services.
+
+3. METHODS
+We used a synthetic but course-aligned benchmark of 6,000 questions from programming, mathematics, statistics, physics, and writing support. The same 7B instruction model was loaded in FP16, INT8, and INT4 variants on one NVIDIA A100 GPU. Each question was run once after a 100-query warm-up. Energy was sampled at one-second intervals from GPU telemetry. We measured exact-match accuracy for structured questions and rubric-based correctness for open responses. Variables recorded were precision, GPU energy, latency, memory use, and response quality.
+
+4. RESULTS
+FP16 consumed 0.92 Wh per response with mean latency 2.8 s. INT8 used 0.63 Wh and 2.2 s, while INT4 used 0.50 Wh and 1.9 s. Overall quality scores were 88.7%, 88.0%, and 84.1%. The INT4 loss was concentrated in multi-step mathematics and symbolic reasoning.
+
+5. DISCUSSION
+INT8 offered the most favorable balance for this workload. The study used one GPU architecture and one model size, so the absolute energy values should not be generalized to all deployments. Telemetry captures device energy but not full datacenter overhead.
+
+6. CONCLUSION
+Moderate quantization can materially reduce the energy cost of campus LLM inference while preserving most answer quality. Institutions should validate aggressive quantization on their own high-risk task types.
+
+7. FUTURE WORK
+Future work should include CPU inference, different accelerator generations, and real production traffic.
+
+APPENDIX A. REPRODUCIBILITY AND REPORTING NOTES
+
+The experimental workflow was logged from data preparation through analysis so that the main comparisons could be reconstructed. Random seeds, model or software versions, preprocessing decisions, and evaluation settings were fixed before the final run. Pilot executions were used only to verify the pipeline and were not mixed with the reported measurements. Intermediate outputs were retained rather than overwritten so that anomalous observations could be traced to their source.
+
+The authors also recorded several contextual variables that were not central to the primary research question. These included runtime environment information, routine validation checks, and descriptive summaries used to detect data-entry or processing mistakes. Such details improve auditability but are not necessary for understanding the headline result. Where measurements depended on hardware or institutional conditions, the paper treats absolute values as setting-specific and emphasizes the relative comparison made under matched conditions.
+
+For replication, future investigators are advised to preserve the same task definitions while independently re-running the analysis on different hardware, datasets, or student populations. The paper distinguishes direct measurements from derived estimates and avoids treating a reduction in one proxy metric as an identical reduction in environmental impact. This distinction is important because energy, latency, carbon intensity, and model quality can change at different rates.

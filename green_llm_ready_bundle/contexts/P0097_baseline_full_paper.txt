@@ -1,0 +1,38 @@
+TITLE: Patterns of AI Study-Tool Use among University Students
+AUTHORS: Chow, R.; Ahmed, S.; Velasquez, P.
+YEAR: 2026
+
+ABSTRACT
+A cross-sectional survey of 520 university students examined frequency of AI study-tool use, perceived learning benefit, and confidence in verifying generated answers. Frequent users reported higher perceived benefit but lower verification confidence in the first-year subgroup. Statistical analysis used chi-square tests, independent-samples t-tests, and Pearson correlations.
+
+1. INTRODUCTION
+Student use of generative AI is widespread, but frequency of use may relate differently to perceived benefit and verification skill across experience levels.
+
+2. RELATED WORK
+Survey research on educational AI has measured adoption, trust, and perceived usefulness. Verification confidence has received less attention.
+
+3. METHODS
+Students from four faculties completed a 28-item survey. Usage frequency was categorized as low, medium, or high. Verification confidence and perceived benefit were measured on five-point scales. Academic year and faculty were collected as demographic variables.
+
+STATISTICAL ANALYSIS
+A chi-square test examined the association between usage-frequency category and academic year; χ²(6)=18.72, p=0.005. An independent-samples t-test compared verification confidence between first-year frequent users and first-year infrequent users; t(138)=-2.41, p=0.017. Pearson correlation tested the relationship between weekly AI-use frequency and perceived learning benefit across the full sample; r=0.31, p<0.001. A second Pearson correlation tested weekly use against verification confidence; r=-0.08, p=0.071.
+
+4. RESULTS
+High use was more common among senior students. Frequent first-year users had lower mean verification confidence than infrequent first-year users (3.1 vs 3.5). Weekly use had a moderate positive association with perceived learning benefit and no statistically significant overall correlation with verification confidence.
+
+5. DISCUSSION
+The cross-sectional design prevents causal interpretation and all central measures were self-reported.
+
+6. CONCLUSION
+AI study-tool use is associated with perceived benefit, but verification confidence may require targeted instruction, particularly for novice students.
+
+7. FUTURE WORK
+Longitudinal work should examine how verification behavior changes as students gain disciplinary expertise.
+
+APPENDIX A. REPRODUCIBILITY AND REPORTING NOTES
+
+The experimental workflow was logged from data preparation through analysis so that the main comparisons could be reconstructed. Random seeds, model or software versions, preprocessing decisions, and evaluation settings were fixed before the final run. Pilot executions were used only to verify the pipeline and were not mixed with the reported measurements. Intermediate outputs were retained rather than overwritten so that anomalous observations could be traced to their source.
+
+The authors also recorded several contextual variables that were not central to the primary research question. These included runtime environment information, routine validation checks, and descriptive summaries used to detect data-entry or processing mistakes. Such details improve auditability but are not necessary for understanding the headline result. Where measurements depended on hardware or institutional conditions, the paper treats absolute values as setting-specific and emphasizes the relative comparison made under matched conditions.
+
+For replication, future investigators are advised to preserve the same task definitions while independently re-running the analysis on different hardware, datasets, or student populations. The paper distinguishes direct measurements from derived estimates and avoids treating a reduction in one proxy metric as an identical reduction in environmental impact. This distinction is important because energy, latency, carbon intensity, and model quality can change at different rates.

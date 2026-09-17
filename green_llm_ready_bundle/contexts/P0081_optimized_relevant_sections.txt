@@ -1,0 +1,6 @@
+TITLE: Prompt Compression for Introductory Programming Tutors
+AUTHORS: Rahman, A.; Chen, M.; Torres, J.
+YEAR: 2026
+
+ABSTRACT
+Large-language-model tutoring systems can generate useful programming explanations but often receive unnecessarily long student prompts. We studied whether prompt compression can reduce input length without reducing instructional quality. A controlled set of 240 introductory Python questions was submitted in verbose and concise forms to the same instruction-tuned model. Concise prompts used 43% fewer input tokens and reduced total tokens by 18% on average, while blind human ratings of correctness and usefulness were statistically indistinguishable. The largest savings occurred for debugging and concept-explanation tasks.

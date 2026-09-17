@@ -1,0 +1,6 @@
+BIOTECHNOLOGY PROJECT FACTS
+Project topic: Enzyme pre-treatment to improve bioethanol yield from wheat straw.
+Background: Lignocellulosic agricultural waste is difficult to ferment efficiently because cellulose is not readily accessible.
+Method: Ground wheat straw was treated with 2% cellulase at 50 °C for 24 hours before fermentation with Saccharomyces cerevisiae. An untreated control was fermented under the same conditions. Each condition was run in triplicate.
+Principal result: Mean bioethanol yield increased from 12.1 g/L in the untreated control to 18.4 g/L after enzyme pre-treatment, an increase of about 52%.
+Conclusion supported by the project: Cellulase pre-treatment improved fermentable sugar availability and increased ethanol yield under the tested conditions.

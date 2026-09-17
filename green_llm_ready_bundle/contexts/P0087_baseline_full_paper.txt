@@ -1,0 +1,35 @@
+TITLE: Automated Formative Feedback for Graduate Statistics Students
+AUTHORS: Park, J.; Idris, F.; Wilson, E.
+YEAR: 2025
+
+ABSTRACT
+We evaluated AI-generated formative feedback in a graduate statistics course using a quasi-experimental design. Fifty-eight students received AI feedback on regression assignments and 55 students received rubric-only feedback. The AI-feedback group improved more on a later interpretation task, but the study found no significant difference in final exam scores.
+
+1. INTRODUCTION
+Timely feedback is valuable in statistics education, but instructors often face heavy grading workloads. Generative AI may provide rapid explanations, yet evidence of learning benefit remains limited.
+
+2. RELATED WORK
+Automated feedback systems have improved practice frequency in mathematics and programming. Generative systems can produce richer prose but may also introduce incorrect statistical claims.
+
+3. METHODS
+Two consecutive course cohorts were assigned by semester rather than individual randomization. The intervention group contained 58 students and the comparison group 55. Both completed the same regression assignment and final exam. The intervention group received AI feedback reviewed by an instructor before release. Outcomes were a 10-point interpretation task and a 100-point final exam.
+
+4. RESULTS
+The interpretation task improved by 1.8 points in the AI-feedback group and 0.7 points in the comparison group. The between-group difference in gain was significant at p=0.03. Final exam means were 78.4 and 77.1, a non-significant difference at p=0.41. Two AI feedback items required instructor correction before release.
+
+5. DISCUSSION
+The design suggests a possible benefit for targeted interpretation skills, but cohort assignment creates confounding risk. Instructor review also means the study does not evaluate fully autonomous AI feedback. The sample came from one program.
+
+6. CONCLUSION
+Reviewed AI-generated feedback may support specific statistical interpretation skills, but evidence for broader achievement gains remains uncertain.
+
+7. FUTURE WORK
+Future studies should randomize students within the same course and compare reviewed versus unreviewed AI feedback.
+
+APPENDIX A. REPRODUCIBILITY AND REPORTING NOTES
+
+The experimental workflow was logged from data preparation through analysis so that the main comparisons could be reconstructed. Random seeds, model or software versions, preprocessing decisions, and evaluation settings were fixed before the final run. Pilot executions were used only to verify the pipeline and were not mixed with the reported measurements. Intermediate outputs were retained rather than overwritten so that anomalous observations could be traced to their source.
+
+The authors also recorded several contextual variables that were not central to the primary research question. These included runtime environment information, routine validation checks, and descriptive summaries used to detect data-entry or processing mistakes. Such details improve auditability but are not necessary for understanding the headline result. Where measurements depended on hardware or institutional conditions, the paper treats absolute values as setting-specific and emphasizes the relative comparison made under matched conditions.
+
+For replication, future investigators are advised to preserve the same task definitions while independently re-running the analysis on different hardware, datasets, or student populations. The paper distinguishes direct measurements from derived estimates and avoids treating a reduction in one proxy metric as an identical reduction in environmental impact. This distinction is important because energy, latency, carbon intensity, and model quality can change at different rates.

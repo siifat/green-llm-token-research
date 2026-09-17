@@ -1,0 +1,35 @@
+TITLE: Prompt Compression for Introductory Programming Tutors
+AUTHORS: Rahman, A.; Chen, M.; Torres, J.
+YEAR: 2026
+
+ABSTRACT
+Large-language-model tutoring systems can generate useful programming explanations but often receive unnecessarily long student prompts. We studied whether prompt compression can reduce input length without reducing instructional quality. A controlled set of 240 introductory Python questions was submitted in verbose and concise forms to the same instruction-tuned model. Concise prompts used 43% fewer input tokens and reduced total tokens by 18% on average, while blind human ratings of correctness and usefulness were statistically indistinguishable. The largest savings occurred for debugging and concept-explanation tasks.
+
+1. INTRODUCTION
+Student requests to AI tutors often contain repeated background, politeness, and self-description. These features may be socially natural but are not always necessary for the model to infer the intended task. Prior work on efficient inference has focused mainly on model architecture and hardware, leaving user-side prompt construction less studied. This study asks whether the same educational task can be expressed more efficiently while preserving the response students need.
+
+2. RELATED WORK
+Research on efficient AI has examined quantization, pruning, caching, and carbon-aware scheduling. Prompt engineering work has mostly optimized accuracy or reasoning performance rather than token efficiency. Educational studies have examined how students formulate questions, but rarely connect wording choices to computational resource use.
+
+3. METHODS
+We created 240 task scenarios from first-year Python topics. For each scenario, researchers wrote a realistic verbose prompt and a concise prompt requesting the identical deliverable. Both variants were run with temperature 0 and the same output limit. We recorded input tokens, output tokens, total tokens, and latency. Three teaching assistants independently rated correctness and educational usefulness on five-point scales.
+
+4. RESULTS
+Concise prompts reduced mean input tokens from 86 to 49 and mean total tokens from 512 to 420. Mean latency fell from 4.7 to 4.1 seconds. Correctness ratings were 4.42 for verbose prompts and 4.39 for concise prompts; usefulness ratings were 4.35 and 4.33 respectively. Differences in quality were not statistically significant at the 0.05 level.
+
+5. DISCUSSION
+The findings indicate that much of the removable prompt material was contextual padding rather than task-critical information. Because output behavior still varied by task type, prompt compression should be evaluated at the interaction level rather than by input tokens alone. The controlled scenarios may not represent every discipline or every model family.
+
+6. CONCLUSION
+Careful prompt compression reduced token use without a meaningful loss of educational quality in this introductory programming setting. The results support treating prompt wording as one practical component of sustainable AI use.
+
+7. FUTURE WORK
+Future work should test naturally occurring student prompts, additional model families, and courses beyond programming.
+
+APPENDIX A. REPRODUCIBILITY AND REPORTING NOTES
+
+The experimental workflow was logged from data preparation through analysis so that the main comparisons could be reconstructed. Random seeds, model or software versions, preprocessing decisions, and evaluation settings were fixed before the final run. Pilot executions were used only to verify the pipeline and were not mixed with the reported measurements. Intermediate outputs were retained rather than overwritten so that anomalous observations could be traced to their source.
+
+The authors also recorded several contextual variables that were not central to the primary research question. These included runtime environment information, routine validation checks, and descriptive summaries used to detect data-entry or processing mistakes. Such details improve auditability but are not necessary for understanding the headline result. Where measurements depended on hardware or institutional conditions, the paper treats absolute values as setting-specific and emphasizes the relative comparison made under matched conditions.
+
+For replication, future investigators are advised to preserve the same task definitions while independently re-running the analysis on different hardware, datasets, or student populations. The paper distinguishes direct measurements from derived estimates and avoids treating a reduction in one proxy metric as an identical reduction in environmental impact. This distinction is important because energy, latency, carbon intensity, and model quality can change at different rates.

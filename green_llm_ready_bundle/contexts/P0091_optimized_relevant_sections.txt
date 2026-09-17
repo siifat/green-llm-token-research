@@ -1,0 +1,14 @@
+TITLE: Quantized LLM Inference: Accuracy, Latency, and Energy Trade-offs
+AUTHORS: Novak, E.; Das, P.
+YEAR: 2025
+
+4. RESULTS
+INT8 reduced energy with small quality changes across all model sizes. INT4 produced the largest energy savings but lowered reasoning scores, particularly for the 13B model. Table 3 summarizes the 7B results used in the main comparison.
+
+TABLE 3. 7B MODEL RESULTS
+Configuration | Reasoning score (%) | Summarization quality (1-5) | Median latency (s) | Energy per response (J)
+FP16 | 78.4 | 4.32 | 3.10 | 96
+INT8 | 77.9 | 4.29 | 2.54 | 71
+INT4 | 72.1 | 4.17 | 2.08 | 55
+
+The best reasoning score is FP16 at 78.4%, while INT8 is only 0.5 percentage points lower and uses 26% less energy. INT4 has the lowest energy but a substantially larger reasoning-score drop.

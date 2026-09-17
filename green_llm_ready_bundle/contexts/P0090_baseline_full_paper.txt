@@ -1,0 +1,35 @@
+TITLE: Measuring Energy per Response in Large-Language-Model Inference
+AUTHORS: Patel, S.; Rahim, N.; Carter, G.
+YEAR: 2026
+
+ABSTRACT
+We present a reproducible protocol for measuring energy per LLM response under controlled decoding settings. Four open models from 3B to 14B parameters were evaluated on 1,200 prompts. Energy scaled strongly with generated token count and model size. Output length explained 71% of within-model energy variation, while prompt length explained 18% after controlling for cached-prefix effects.
+
+1. INTRODUCTION
+Public discussion of AI energy often focuses on model training, but widespread interactive use makes inference increasingly important. Per-response energy is difficult to compare when studies use different hardware, prompt lengths, and decoding settings.
+
+2. RELATED WORK
+Existing reporting frameworks recommend energy transparency, while recent inference studies show that generative models can consume much more energy than task-specific systems. Standardized response-level measurement remains uncommon.
+
+3. METHODS
+We tested four open instruction models on one A100 GPU with fixed software versions. The benchmark contained 1,200 prompts stratified by input length and requested output length. Temperature was zero. GPU power was sampled at 10 Hz. We subtracted an idle baseline and report joules per request, tokens per joule, and latency.
+
+4. RESULTS
+Median energy ranged from 41 J for the 3B model to 129 J for the 14B model. Across models, doubling generated tokens approximately doubled dynamic energy. Input tokens had a smaller but measurable effect, especially when prompts exceeded the prefix-cache window.
+
+5. DISCUSSION
+The results demonstrate why both input and output tokens should be reported. Measurements reflect one accelerator and do not include networking or full datacenter overhead.
+
+6. CONCLUSION
+Response-level energy benchmarking should control model, hardware, decoding settings, input length, and output length. Token counts are useful explanatory variables but are not identical to energy.
+
+7. FUTURE WORK
+Future work should validate the protocol across accelerators and production serving systems.
+
+APPENDIX A. REPRODUCIBILITY AND REPORTING NOTES
+
+The experimental workflow was logged from data preparation through analysis so that the main comparisons could be reconstructed. Random seeds, model or software versions, preprocessing decisions, and evaluation settings were fixed before the final run. Pilot executions were used only to verify the pipeline and were not mixed with the reported measurements. Intermediate outputs were retained rather than overwritten so that anomalous observations could be traced to their source.
+
+The authors also recorded several contextual variables that were not central to the primary research question. These included runtime environment information, routine validation checks, and descriptive summaries used to detect data-entry or processing mistakes. Such details improve auditability but are not necessary for understanding the headline result. Where measurements depended on hardware or institutional conditions, the paper treats absolute values as setting-specific and emphasizes the relative comparison made under matched conditions.
+
+For replication, future investigators are advised to preserve the same task definitions while independently re-running the analysis on different hardware, datasets, or student populations. The paper distinguishes direct measurements from derived estimates and avoids treating a reduction in one proxy metric as an identical reduction in environmental impact. This distinction is important because energy, latency, carbon intensity, and model quality can change at different rates.

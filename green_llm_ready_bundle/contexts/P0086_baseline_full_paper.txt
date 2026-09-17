@@ -1,0 +1,65 @@
+TITLE: Early Student Dropout Prediction with Gradient-Boosted Trees
+AUTHORS: Alvarez, M.; Roy, P.
+YEAR: 2024
+
+ABSTRACT
+We predict first-year university dropout using demographic, attendance, assessment, and learning-management-system features. Gradient-boosted trees trained on 9,800 student records achieved an AUROC of 0.84 and F1 score of 0.71. Feature attribution highlighted missed assessments, declining attendance, and low LMS activity as the strongest predictors.
+
+1. INTRODUCTION
+Universities seek early indicators of dropout so support can be offered before students disengage completely. We evaluate a supervised tabular model designed for interpretable risk scoring.
+
+2. RELATED WORK
+Dropout prediction has used logistic regression, random forests, neural networks, and boosting. Recent work emphasizes both predictive accuracy and explanations suitable for student-support staff.
+
+3. METHODS
+Administrative and LMS records from 9,800 first-year students were split 70/15/15 into train, validation, and test sets. Missing numeric values were median-imputed. We trained XGBoost with class weighting and tuned depth and learning rate on validation AUROC. SHAP values were used for explanation.
+
+4. RESULTS
+The test AUROC was 0.84, F1 was 0.71, and recall at the selected threshold was 0.76. The three strongest features were missed assessments, attendance decline, and weekly LMS logins.
+
+5. DISCUSSION
+The model is comparatively accurate and explanations are straightforward, but institutional policy changes could shift feature relationships over time. Sensitive attributes were excluded from deployment scores.
+
+6. CONCLUSION
+Gradient-boosted trees provide a practical balance of accuracy and interpretability for early dropout risk screening.
+
+7. FUTURE WORK
+Future work should evaluate temporal drift and fairness across degree programs.
+
+================================================================================
+
+TITLE: Sequence Modeling of Student Engagement for Dropout Prediction
+AUTHORS: Chen, Y.; Ibrahim, N.
+YEAR: 2024
+
+ABSTRACT
+We model weekly student engagement sequences with a gated recurrent neural network to predict first-year dropout. Using the same 9,800-student institutional dataset as a prior tabular benchmark, the sequence model achieved AUROC 0.86 and F1 0.69. Performance improved for students whose engagement changed sharply during the semester, but model explanations were less accessible to advisors.
+
+1. INTRODUCTION
+Static summaries may hide changes in student behavior over time. We test whether sequence modeling of weekly activity improves dropout prediction relative to a tabular baseline.
+
+2. RELATED WORK
+Prior dropout models frequently aggregate attendance and LMS activity over a semester. Sequence models can capture trends but may be harder to interpret and maintain.
+
+3. METHODS
+Weekly attendance, LMS activity, and assessment submission indicators were represented as 12-step sequences. Data from 9,800 students were split identically to the published tabular benchmark. A two-layer GRU with dropout was tuned on validation AUROC. Integrated gradients were used for post-hoc explanation.
+
+4. RESULTS
+The GRU achieved test AUROC 0.86 and F1 0.69. It outperformed the tabular model on students with late-semester engagement decline but produced more false positives among students with irregular LMS usage.
+
+5. DISCUSSION
+The sequence model offers a small AUROC improvement but lower F1 and reduced interpretability. It also requires complete weekly event pipelines, increasing deployment complexity.
+
+6. CONCLUSION
+Temporal modeling can capture engagement change, but the modest accuracy gain must be weighed against operational and interpretability costs.
+
+7. FUTURE WORK
+Future work should combine temporal features with simpler risk models and evaluate intervention outcomes.
+
+APPENDIX A. REPRODUCIBILITY AND REPORTING NOTES
+
+The experimental workflow was logged from data preparation through analysis so that the main comparisons could be reconstructed. Random seeds, model or software versions, preprocessing decisions, and evaluation settings were fixed before the final run. Pilot executions were used only to verify the pipeline and were not mixed with the reported measurements. Intermediate outputs were retained rather than overwritten so that anomalous observations could be traced to their source.
+
+The authors also recorded several contextual variables that were not central to the primary research question. These included runtime environment information, routine validation checks, and descriptive summaries used to detect data-entry or processing mistakes. Such details improve auditability but are not necessary for understanding the headline result. Where measurements depended on hardware or institutional conditions, the paper treats absolute values as setting-specific and emphasizes the relative comparison made under matched conditions.
+
+For replication, future investigators are advised to preserve the same task definitions while independently re-running the analysis on different hardware, datasets, or student populations. The paper distinguishes direct measurements from derived estimates and avoids treating a reduction in one proxy metric as an identical reduction in environmental impact. This distinction is important because energy, latency, carbon intensity, and model quality can change at different rates.

@@ -1,0 +1,46 @@
+TITLE: Trust and Continued Use of AI Study Assistants among Undergraduates
+AUTHORS: Bennett, C.; Chowdhury, F.; Lin, Z.
+YEAR: 2026
+
+ABSTRACT
+We surveyed 684 undergraduates to examine how perceived accuracy, transparency, and privacy concern relate to trust and continued use of AI study assistants. Structural equation modeling showed that perceived accuracy and transparency were positively associated with trust, while privacy concern was negatively associated with trust. Trust was strongly associated with intention to continue using AI support.
+
+1. INTRODUCTION
+AI study assistants are increasingly used for explanation, drafting, and revision, yet continued use may depend on more than perceived usefulness. Trust is especially important when students cannot directly verify every generated statement.
+
+The study addresses the following research questions:
+RQ1. How is perceived response accuracy associated with student trust in AI study assistants?
+RQ2. How is perceived transparency associated with student trust in AI study assistants?
+RQ3. How are privacy concerns associated with student trust and intended continued use?
+
+The preregistered hypotheses were:
+H1. Higher perceived response accuracy is positively associated with trust.
+H2. Higher perceived transparency is positively associated with trust.
+H3. Greater privacy concern is negatively associated with trust.
+H4. Higher trust is positively associated with intention to continue using the AI study assistant.
+
+2. RELATED WORK
+Technology acceptance studies consistently identify usefulness and ease of use as adoption factors. Human-AI trust research additionally highlights reliability, transparency, and perceived risk.
+
+3. METHODS
+An online survey was completed by 684 students at three universities. Multi-item constructs used seven-point Likert scales. Confirmatory factor analysis preceded structural equation modeling. Demographics and prior AI use were included as controls.
+
+4. RESULTS
+All four hypotheses were supported. Standardized paths were accuracy→trust β=0.46 (p<0.001), transparency→trust β=0.21 (p=0.004), privacy concern→trust β=-0.19 (p=0.011), and trust→continued-use intention β=0.58 (p<0.001). Model fit was acceptable (CFI=0.95, RMSEA=0.049).
+
+5. DISCUSSION
+The cross-sectional design cannot establish causal direction. Students self-selected into the survey, and trust was measured as perception rather than observed reliance behavior.
+
+6. CONCLUSION
+Accuracy, transparency, and privacy perceptions are associated with how much students trust AI study assistants, and trust is closely associated with intended continued use.
+
+7. FUTURE WORK
+Future work should combine behavioral usage logs with longitudinal trust measures.
+
+APPENDIX A. REPRODUCIBILITY AND REPORTING NOTES
+
+The experimental workflow was logged from data preparation through analysis so that the main comparisons could be reconstructed. Random seeds, model or software versions, preprocessing decisions, and evaluation settings were fixed before the final run. Pilot executions were used only to verify the pipeline and were not mixed with the reported measurements. Intermediate outputs were retained rather than overwritten so that anomalous observations could be traced to their source.
+
+The authors also recorded several contextual variables that were not central to the primary research question. These included runtime environment information, routine validation checks, and descriptive summaries used to detect data-entry or processing mistakes. Such details improve auditability but are not necessary for understanding the headline result. Where measurements depended on hardware or institutional conditions, the paper treats absolute values as setting-specific and emphasizes the relative comparison made under matched conditions.
+
+For replication, future investigators are advised to preserve the same task definitions while independently re-running the analysis on different hardware, datasets, or student populations. The paper distinguishes direct measurements from derived estimates and avoids treating a reduction in one proxy metric as an identical reduction in environmental impact. This distinction is important because energy, latency, carbon intensity, and model quality can change at different rates.

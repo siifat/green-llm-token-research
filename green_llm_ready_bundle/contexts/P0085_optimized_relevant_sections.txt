@@ -1,0 +1,8 @@
+TITLE: Student Reliance on AI Code Assistants in Introductory Programming
+AUTHORS: Khan, L.; Murray, T.; Bose, S.
+YEAR: 2025
+
+5. DISCUSSION
+The study relies partly on self-reported usage and cannot establish that AI use caused the observed behaviors. The supervised task represents only one type of programming activity. Participants came from two institutions and were mostly first-year students, limiting generalizability.
+6. CONCLUSION
+AI code assistants may increase confidence without guaranteeing stronger verification. Introductory courses should teach students to test and inspect generated code rather than treating tool output as authoritative.

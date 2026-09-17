@@ -1,0 +1,8 @@
+TITLE: Distilled Transformers for Energy-Efficient Edge Text Classification
+AUTHORS: Singh, R.; Duarte, M.
+YEAR: 2025
+
+3. METHODS
+We trained two student models from a 110M-parameter teacher using temperature-scaled logits and task loss. Evaluation used SST-2 (67,349 train/872 validation/1,821 test), AG News (120,000 train/7,600 test), and DBPedia (560,000 train/70,000 test). Metrics were accuracy, macro-F1, median latency, peak memory, and joules per 1,000 examples. Energy was measured on a Jetson Orin Nano and an Intel NUC.
+4. RESULTS
+The teacher averaged 93.1% accuracy. The 66M student averaged 92.4%, and the 22M student 90.0%. On the Jetson, energy per 1,000 examples was 41 J, 29 J, and 17 J respectively. Macro-F1 followed the same pattern. The 22M model's latency was 2.3 times faster than the teacher.

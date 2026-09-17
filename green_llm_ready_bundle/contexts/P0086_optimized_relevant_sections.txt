@@ -1,0 +1,19 @@
+TITLE: Early Student Dropout Prediction with Gradient-Boosted Trees
+AUTHORS: Alvarez, M.; Roy, P.
+YEAR: 2024
+
+ABSTRACT
+We predict first-year university dropout using demographic, attendance, assessment, and learning-management-system features. Gradient-boosted trees trained on 9,800 student records achieved an AUROC of 0.84 and F1 score of 0.71. Feature attribution highlighted missed assessments, declining attendance, and low LMS activity as the strongest predictors.
+4. RESULTS
+The test AUROC was 0.84, F1 was 0.71, and recall at the selected threshold was 0.76. The three strongest features were missed assessments, attendance decline, and weekly LMS logins.
+
+--------------------------------------------------------------------------------
+
+TITLE: Sequence Modeling of Student Engagement for Dropout Prediction
+AUTHORS: Chen, Y.; Ibrahim, N.
+YEAR: 2024
+
+ABSTRACT
+We model weekly student engagement sequences with a gated recurrent neural network to predict first-year dropout. Using the same 9,800-student institutional dataset as a prior tabular benchmark, the sequence model achieved AUROC 0.86 and F1 0.69. Performance improved for students whose engagement changed sharply during the semester, but model explanations were less accessible to advisors.
+4. RESULTS
+The GRU achieved test AUROC 0.86 and F1 0.69. It outperformed the tabular model on students with late-semester engagement decline but produced more false positives among students with irregular LMS usage.

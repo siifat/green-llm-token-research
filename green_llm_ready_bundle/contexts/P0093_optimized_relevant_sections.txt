@@ -1,0 +1,14 @@
+TITLE: Techniques for Reducing the Cost of Generative-AI Inference: A Structured Review
+AUTHORS: Garcia, P.; Kim, J.
+YEAR: 2026
+
+2. RELATED WORK
+Theme 1: Model compression. Quantization, pruning, distillation, and sparse activation reduce computation or memory use. Studies often report speed and memory, while energy reporting is less consistent.
+
+Theme 2: Serving-system optimization. Dynamic batching, speculative decoding, kernel fusion, and cache-aware scheduling improve accelerator utilization and tokens per second.
+
+Theme 3: Workload reuse. Prefix caching, semantic caching, retrieval, and response reuse avoid repeated computation when inputs overlap.
+
+Theme 4: Carbon-aware operation. Geographic routing, time shifting, and renewable-energy matching aim to reduce emissions even when energy use changes little.
+
+Across themes, studies use incompatible quality metrics and hardware, limiting direct comparison.

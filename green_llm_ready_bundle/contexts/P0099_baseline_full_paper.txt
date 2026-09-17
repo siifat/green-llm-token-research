@@ -1,0 +1,35 @@
+TITLE: Interpretable Machine Learning for Hospital Readmission Prediction
+AUTHORS: Moreno, L.; Shah, D.; Peters, A.
+YEAR: 2025
+
+ABSTRACT
+We compare interpretable and black-box models for predicting 30-day hospital readmission from electronic health records. Gradient boosting achieved AUROC 0.79, while logistic regression achieved 0.75. Calibration and subgroup analysis showed that the simpler model remained competitive for deployment decisions.
+
+1. INTRODUCTION
+Hospital readmission prediction is a common clinical machine-learning task where accuracy, calibration, and interpretability all matter.
+
+2. RELATED WORK
+Previous studies have applied linear models, tree ensembles, and neural networks to readmission risk. Clinical deployment often favors transparent models when accuracy differences are modest.
+
+3. METHODS
+We used 42,000 de-identified admissions with demographic, diagnosis, medication, and prior-utilization features. Models were evaluated using AUROC, Brier score, calibration slope, and subgroup performance.
+
+4. RESULTS
+Gradient boosting had AUROC 0.79 versus 0.75 for logistic regression. The logistic model had slightly better calibration before post-hoc correction.
+
+5. DISCUSSION
+The study concerns predictive performance and interpretability. It did not measure model energy, carbon emissions, inference latency, hardware utilization, or computational efficiency.
+
+6. CONCLUSION
+Model selection for clinical prediction should consider calibration and interpretability alongside discrimination.
+
+7. FUTURE WORK
+Future research should prospectively validate the models across hospitals and study clinician interaction with explanations.
+
+APPENDIX A. REPRODUCIBILITY AND REPORTING NOTES
+
+The experimental workflow was logged from data preparation through analysis so that the main comparisons could be reconstructed. Random seeds, model or software versions, preprocessing decisions, and evaluation settings were fixed before the final run. Pilot executions were used only to verify the pipeline and were not mixed with the reported measurements. Intermediate outputs were retained rather than overwritten so that anomalous observations could be traced to their source.
+
+The authors also recorded several contextual variables that were not central to the primary research question. These included runtime environment information, routine validation checks, and descriptive summaries used to detect data-entry or processing mistakes. Such details improve auditability but are not necessary for understanding the headline result. Where measurements depended on hardware or institutional conditions, the paper treats absolute values as setting-specific and emphasizes the relative comparison made under matched conditions.
+
+For replication, future investigators are advised to preserve the same task definitions while independently re-running the analysis on different hardware, datasets, or student populations. The paper distinguishes direct measurements from derived estimates and avoids treating a reduction in one proxy metric as an identical reduction in environmental impact. This distinction is important because energy, latency, carbon intensity, and model quality can change at different rates.

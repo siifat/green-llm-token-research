@@ -1,0 +1,8 @@
+TITLE: Sparse Mixture-of-Experts Models for Efficient Educational Question Answering
+AUTHORS: Foster, R.; Ali, M.; Ito, K.
+YEAR: 2025
+
+1. INTRODUCTION
+Mixture-of-experts models increase total parameter capacity while activating only a subset of parameters for each token. This can reduce active computation, but routing, expert capacity, and load balancing become important systems concerns.
+3. METHODS
+We evaluated a dense 7B baseline and a sparse model with 12 experts. The router selected the top two experts per token. The benchmark contained 4,000 questions from five university subjects. We tracked active parameters, router entropy, expert load balance, latency, and rubric-based answer quality.

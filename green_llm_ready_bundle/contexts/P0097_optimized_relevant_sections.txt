@@ -1,0 +1,11 @@
+TITLE: Patterns of AI Study-Tool Use among University Students
+AUTHORS: Chow, R.; Ahmed, S.; Velasquez, P.
+YEAR: 2026
+
+3. METHODS
+Students from four faculties completed a 28-item survey. Usage frequency was categorized as low, medium, or high. Verification confidence and perceived benefit were measured on five-point scales. Academic year and faculty were collected as demographic variables.
+
+STATISTICAL ANALYSIS
+A chi-square test examined the association between usage-frequency category and academic year; χ²(6)=18.72, p=0.005. An independent-samples t-test compared verification confidence between first-year frequent users and first-year infrequent users; t(138)=-2.41, p=0.017. Pearson correlation tested the relationship between weekly AI-use frequency and perceived learning benefit across the full sample; r=0.31, p<0.001. A second Pearson correlation tested weekly use against verification confidence; r=-0.08, p=0.071.
+4. RESULTS
+High use was more common among senior students. Frequent first-year users had lower mean verification confidence than infrequent first-year users (3.1 vs 3.5). Weekly use had a moderate positive association with perceived learning benefit and no statistically significant overall correlation with verification confidence.

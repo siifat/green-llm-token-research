@@ -1,0 +1,35 @@
+TITLE: Retrieval-Augmented Course Question Answering with Instructor-Approved Sources
+AUTHORS: Salim, H.; Brooks, E.
+YEAR: 2025
+
+ABSTRACT
+We evaluate a retrieval-augmented generation (RAG) assistant for a university data-structures course. Compared with a standalone language model, RAG increased factual correctness from 82% to 93% and reduced unsupported claims. Retrieval failures remained the dominant error source.
+
+1. INTRODUCTION
+Course assistants should answer using instructor-approved material rather than relying only on model memory. Retrieval-augmented generation can ground answers in lecture notes and assignment policies.
+
+2. RELATED WORK
+RAG has improved factuality in knowledge-intensive tasks, but course deployments require small, frequently updated document collections.
+
+3. METHODS
+The corpus contained 214 lecture-note pages, 38 assignment documents, and 96 FAQ entries. We evaluated 600 student-style questions. The baseline model received only the question; the RAG system retrieved the top four passages before generation. Three instructors scored correctness and citation support.
+
+4. RESULTS
+Standalone correctness was 82%; RAG correctness was 93%. Unsupported claims fell from 14% to 4%. On 7% of questions, retrieval failed to return the necessary passage, and those failures accounted for most incorrect RAG answers.
+
+5. DISCUSSION
+RAG improves grounding but does not remove the need to monitor retrieval quality or update stale course material.
+
+6. CONCLUSION
+Instructor-approved retrieval substantially improved course-answer factuality and reduced unsupported claims, with retrieval quality becoming the main remaining bottleneck.
+
+7. FUTURE WORK
+Future work should test automatic stale-document detection and student-facing uncertainty indicators.
+
+APPENDIX A. REPRODUCIBILITY AND REPORTING NOTES
+
+The experimental workflow was logged from data preparation through analysis so that the main comparisons could be reconstructed. Random seeds, model or software versions, preprocessing decisions, and evaluation settings were fixed before the final run. Pilot executions were used only to verify the pipeline and were not mixed with the reported measurements. Intermediate outputs were retained rather than overwritten so that anomalous observations could be traced to their source.
+
+The authors also recorded several contextual variables that were not central to the primary research question. These included runtime environment information, routine validation checks, and descriptive summaries used to detect data-entry or processing mistakes. Such details improve auditability but are not necessary for understanding the headline result. Where measurements depended on hardware or institutional conditions, the paper treats absolute values as setting-specific and emphasizes the relative comparison made under matched conditions.
+
+For replication, future investigators are advised to preserve the same task definitions while independently re-running the analysis on different hardware, datasets, or student populations. The paper distinguishes direct measurements from derived estimates and avoids treating a reduction in one proxy metric as an identical reduction in environmental impact. This distinction is important because energy, latency, carbon intensity, and model quality can change at different rates.

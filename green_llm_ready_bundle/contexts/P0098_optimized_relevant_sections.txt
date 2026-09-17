@@ -1,0 +1,8 @@
+TITLE: Retrieval-Augmented Course Question Answering with Instructor-Approved Sources
+AUTHORS: Salim, H.; Brooks, E.
+YEAR: 2025
+
+4. RESULTS
+Standalone correctness was 82%; RAG correctness was 93%. Unsupported claims fell from 14% to 4%. On 7% of questions, retrieval failed to return the necessary passage, and those failures accounted for most incorrect RAG answers.
+6. CONCLUSION
+Instructor-approved retrieval substantially improved course-answer factuality and reduced unsupported claims, with retrieval quality becoming the main remaining bottleneck.

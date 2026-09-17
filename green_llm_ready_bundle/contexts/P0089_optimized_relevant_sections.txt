@@ -1,0 +1,6 @@
+TITLE: Water-Aware Scheduling for AI Training Clusters
+AUTHORS: Yamada, T.; Hassan, R.; Price, L.
+YEAR: 2025
+
+6. CONCLUSION
+Time shifting can reduce cooling-water consumption for flexible AI workloads, but water, energy, and carbon should be optimized jointly.

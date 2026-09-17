@@ -1,0 +1,35 @@
+SQL OPTIMIZATION INPUT
+
+Schema:
+customers(
+  customer_id BIGINT PRIMARY KEY,
+  name VARCHAR(120) NOT NULL
+)
+
+orders(
+  order_id BIGINT PRIMARY KEY,
+  customer_id BIGINT NOT NULL,
+  order_date TIMESTAMP NOT NULL,
+  total_amount DECIMAL(10,2) NOT NULL,
+  FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
+)
+
+Data size:
+customers: about 180,000 rows
+orders: about 2,300,000 rows
+
+Existing indexes:
+- PRIMARY KEY on customers.customer_id
+- PRIMARY KEY on orders.order_id
+- No secondary index on orders.order_date or orders.customer_id
+
+Slow query:
+SELECT c.name, SUM(o.total_amount) AS total_spend
+FROM orders AS o
+JOIN customers AS c
+  ON c.customer_id = o.customer_id
+WHERE DATE(o.order_date) >= '2026-01-01'
+GROUP BY c.customer_id, c.name
+ORDER BY total_spend DESC;
+
+Goal: Optimize the query for filtering recent orders and joining to customers, and explain how EXPLAIN should be used to verify the plan.

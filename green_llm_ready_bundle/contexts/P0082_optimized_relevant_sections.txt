@@ -1,0 +1,6 @@
+TITLE: Energy-Aware Quantization for Campus Language-Model Services
+AUTHORS: Okafor, N.; Silva, P.; Ahmed, R.
+YEAR: 2025
+
+3. METHODS
+We used a synthetic but course-aligned benchmark of 6,000 questions from programming, mathematics, statistics, physics, and writing support. The same 7B instruction model was loaded in FP16, INT8, and INT4 variants on one NVIDIA A100 GPU. Each question was run once after a 100-query warm-up. Energy was sampled at one-second intervals from GPU telemetry. We measured exact-match accuracy for structured questions and rubric-based correctness for open responses. Variables recorded were precision, GPU energy, latency, memory use, and response quality.

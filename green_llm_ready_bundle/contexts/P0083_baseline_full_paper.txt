@@ -1,0 +1,35 @@
+TITLE: Caching Repeated Language-Model Queries in a University Helpdesk
+AUTHORS: Mensah, K.; Iqbal, S.
+YEAR: 2025
+
+ABSTRACT
+We evaluate semantic caching for a university IT and course-support chatbot. The system matched new questions against prior queries and reused an existing response when cosine similarity exceeded a tuned threshold. On 18,000 helpdesk questions, caching avoided 37% of model calls, reduced mean response energy by 29%, and lowered median latency from 3.2 to 1.1 seconds. A manual audit found a 2.4% incorrect-reuse rate, concentrated in questions containing course-specific deadlines.
+
+1. INTRODUCTION
+Many support questions are repeated with small wording differences. Running a generative model for every query wastes computation if a sufficiently similar verified answer already exists. We investigate whether semantic caching can lower inference demand without unacceptable answer reuse errors.
+
+2. RELATED WORK
+Traditional web caching relies on exact keys, while semantic caches use embedding similarity. Prior LLM work shows latency benefits but reports less evidence on energy use and educational helpdesk settings.
+
+3. METHODS
+We collected 18,000 de-identified questions from a simulated university helpdesk covering account access, software installation, course registration, and common programming issues. Sentence embeddings were used for nearest-neighbor retrieval. Thresholds from 0.82 to 0.96 were tuned on 2,000 validation queries. The final threshold was 0.91. We measured model-call avoidance, GPU energy, latency, and incorrect reuse through manual review of 1,000 cached responses.
+
+4. RESULTS
+At the 0.91 threshold, 37% of queries were served from cache. Average energy per incoming query fell from 0.74 Wh to 0.53 Wh. Median latency fell from 3.2 s to 1.1 s. Manual review estimated 2.4% incorrect reuse; deadline-sensitive and course-specific questions caused most errors.
+
+5. DISCUSSION
+Caching is effective when repeated questions have stable answers. Dynamic institutional information requires freshness checks or cache invalidation. The study used one embedding model and a simulated helpdesk, limiting external validity.
+
+6. CONCLUSION
+Semantic caching can reduce repeated LLM computation substantially, but deployment should combine similarity matching with metadata and expiration rules.
+
+7. FUTURE WORK
+Future work should test instructor-approved cache entries and automatic freshness detection.
+
+APPENDIX A. REPRODUCIBILITY AND REPORTING NOTES
+
+The experimental workflow was logged from data preparation through analysis so that the main comparisons could be reconstructed. Random seeds, model or software versions, preprocessing decisions, and evaluation settings were fixed before the final run. Pilot executions were used only to verify the pipeline and were not mixed with the reported measurements. Intermediate outputs were retained rather than overwritten so that anomalous observations could be traced to their source.
+
+The authors also recorded several contextual variables that were not central to the primary research question. These included runtime environment information, routine validation checks, and descriptive summaries used to detect data-entry or processing mistakes. Such details improve auditability but are not necessary for understanding the headline result. Where measurements depended on hardware or institutional conditions, the paper treats absolute values as setting-specific and emphasizes the relative comparison made under matched conditions.
+
+For replication, future investigators are advised to preserve the same task definitions while independently re-running the analysis on different hardware, datasets, or student populations. The paper distinguishes direct measurements from derived estimates and avoids treating a reduction in one proxy metric as an identical reduction in environmental impact. This distinction is important because energy, latency, carbon intensity, and model quality can change at different rates.

@@ -1,0 +1,35 @@
+TITLE: Distilled Transformers for Energy-Efficient Edge Text Classification
+AUTHORS: Singh, R.; Duarte, M.
+YEAR: 2025
+
+ABSTRACT
+We compare a 110M-parameter teacher transformer with 66M and 22M distilled students for text classification on SST-2, AG News, and DBPedia. The 22M model reduced measured edge-device energy per 1,000 examples by 58% while retaining 96.7% of the teacher's average accuracy. Distillation benefited latency most on the lowest-power device.
+
+1. INTRODUCTION
+Running NLP locally can improve privacy and reduce network dependence, but transformer inference may strain edge hardware. Knowledge distillation offers a way to compress models while preserving task performance.
+
+2. RELATED WORK
+Model compression includes pruning, quantization, and distillation. Prior edge-NLP work often reports latency and accuracy but less frequently reports measured energy.
+
+3. METHODS
+We trained two student models from a 110M-parameter teacher using temperature-scaled logits and task loss. Evaluation used SST-2 (67,349 train/872 validation/1,821 test), AG News (120,000 train/7,600 test), and DBPedia (560,000 train/70,000 test). Metrics were accuracy, macro-F1, median latency, peak memory, and joules per 1,000 examples. Energy was measured on a Jetson Orin Nano and an Intel NUC.
+
+4. RESULTS
+The teacher averaged 93.1% accuracy. The 66M student averaged 92.4%, and the 22M student 90.0%. On the Jetson, energy per 1,000 examples was 41 J, 29 J, and 17 J respectively. Macro-F1 followed the same pattern. The 22M model's latency was 2.3 times faster than the teacher.
+
+5. DISCUSSION
+Distillation provides a favorable efficiency trade-off for classification, but the results concern encoder models and may not transfer directly to generative LLMs.
+
+6. CONCLUSION
+A small distilled transformer can substantially lower edge inference energy while preserving most classification performance.
+
+7. FUTURE WORK
+Future work should combine distillation with quantization and test multilingual datasets.
+
+APPENDIX A. REPRODUCIBILITY AND REPORTING NOTES
+
+The experimental workflow was logged from data preparation through analysis so that the main comparisons could be reconstructed. Random seeds, model or software versions, preprocessing decisions, and evaluation settings were fixed before the final run. Pilot executions were used only to verify the pipeline and were not mixed with the reported measurements. Intermediate outputs were retained rather than overwritten so that anomalous observations could be traced to their source.
+
+The authors also recorded several contextual variables that were not central to the primary research question. These included runtime environment information, routine validation checks, and descriptive summaries used to detect data-entry or processing mistakes. Such details improve auditability but are not necessary for understanding the headline result. Where measurements depended on hardware or institutional conditions, the paper treats absolute values as setting-specific and emphasizes the relative comparison made under matched conditions.
+
+For replication, future investigators are advised to preserve the same task definitions while independently re-running the analysis on different hardware, datasets, or student populations. The paper distinguishes direct measurements from derived estimates and avoids treating a reduction in one proxy metric as an identical reduction in environmental impact. This distinction is important because energy, latency, carbon intensity, and model quality can change at different rates.

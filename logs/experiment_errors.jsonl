@@ -1,0 +1,2 @@
+{"timestamp_utc": "2026-09-17T16:54:56.758222+00:00", "prompt_id": "P0003", "variant": "baseline", "error_type": "RuntimeError", "error": "Ollama failed after 4 attempts: HTTP 500: Internal Server Error | Ollama message: {\"error\":\"prediction aborted, token repeat limit reached\"}"}
+{"timestamp_utc": "2026-09-17T19:33:17.268753+00:00", "prompt_id": "P0003", "variant": "baseline", "error_type": "RuntimeError", "error": "Ollama failed after 4 attempts: HTTP 500: Internal Server Error | Ollama message: {\"error\":\"prediction aborted, token repeat limit reached\"}"}

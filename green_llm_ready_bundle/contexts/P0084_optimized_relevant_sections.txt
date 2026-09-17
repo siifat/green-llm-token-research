@@ -1,0 +1,8 @@
+TITLE: Carbon-Aware Scheduling of Generative AI Inference
+AUTHORS: Lee, H.; Gomez, R.; Nair, V.
+YEAR: 2026
+
+1. INTRODUCTION
+The environmental impact of AI inference depends not only on the amount of electricity consumed but also on when and where that electricity is used. Existing serving systems primarily optimize latency, throughput, and cost. This leaves a gap for workloads such as document summarization, batch grading assistance, and overnight report generation that can tolerate short delays.
+2. RELATED WORK
+Prior green-computing work has studied geographic load shifting for datacenters and carbon-aware scheduling for general cloud jobs. LLM serving research focuses on batching and accelerator utilization. Few systems combine inference deadlines, regional carbon intensity, and model availability in one scheduling policy.

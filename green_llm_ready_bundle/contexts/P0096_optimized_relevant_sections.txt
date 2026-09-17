@@ -1,0 +1,30 @@
+TITLE: Eight-Bit Quantization for Sustainable Language-Model Inference
+AUTHORS: Seo, J.; Malik, T.
+YEAR: 2025
+
+ABSTRACT
+We measure the effect of 8-bit quantization on a 7B instruction model across summarization and question answering. INT8 reduced GPU energy per response by 27% and memory by 42%, while average quality fell by 0.6 percentage points.
+6. CONCLUSION
+INT8 quantization offers a strong efficiency-quality trade-off on supported accelerators.
+
+--------------------------------------------------------------------------------
+
+TITLE: Semantic Response Caching for Repeated LLM Requests
+AUTHORS: Abebe, S.; Martin, G.
+YEAR: 2025
+
+ABSTRACT
+We evaluate semantic caching on 50,000 service requests. Reusing prior responses avoided 34% of model calls and reduced total service energy by 24%, but stale answers appeared when source information changed.
+6. CONCLUSION
+Semantic caching can outperform purely model-level optimization for repetitive workloads by avoiding inference altogether.
+
+--------------------------------------------------------------------------------
+
+TITLE: Carbon-Intensity-Aware Routing for Distributed AI Inference
+AUTHORS: Taylor, N.; Sato, Y.
+YEAR: 2025
+
+ABSTRACT
+We route flexible inference requests among three regions using hourly electricity carbon intensity. Emissions fell 18% with unchanged model quality, but network transfer and regional capacity limited further gains.
+6. CONCLUSION
+Carbon-aware routing complements efficiency techniques but optimizes emissions rather than compute demand itself.

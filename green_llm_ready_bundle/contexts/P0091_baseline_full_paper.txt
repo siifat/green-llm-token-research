@@ -1,0 +1,43 @@
+TITLE: Quantized LLM Inference: Accuracy, Latency, and Energy Trade-offs
+AUTHORS: Novak, E.; Das, P.
+YEAR: 2025
+
+ABSTRACT
+We benchmark FP16, INT8, and INT4 inference for three instruction-tuned language models on reasoning and summarization tasks. Quantization consistently reduced memory and energy, but aggressive INT4 settings harmed reasoning accuracy more than summarization quality.
+
+1. INTRODUCTION
+Quantization is widely proposed as an efficiency technique, but practitioners need direct comparisons that include both task quality and energy.
+
+2. RELATED WORK
+Prior work reports memory reductions and throughput gains from low-precision inference. Fewer studies compare energy and task-level quality across several quantization levels.
+
+3. METHODS
+Three models (3B, 7B, 13B) were evaluated on 500 reasoning items and 500 summarization items. All runs used identical prompts, greedy decoding, and the same A100 GPU. We measured task score, latency, peak memory, and joules per response.
+
+4. RESULTS
+INT8 reduced energy with small quality changes across all model sizes. INT4 produced the largest energy savings but lowered reasoning scores, particularly for the 13B model. Table 3 summarizes the 7B results used in the main comparison.
+
+TABLE 3. 7B MODEL RESULTS
+Configuration | Reasoning score (%) | Summarization quality (1-5) | Median latency (s) | Energy per response (J)
+FP16 | 78.4 | 4.32 | 3.10 | 96
+INT8 | 77.9 | 4.29 | 2.54 | 71
+INT4 | 72.1 | 4.17 | 2.08 | 55
+
+The best reasoning score is FP16 at 78.4%, while INT8 is only 0.5 percentage points lower and uses 26% less energy. INT4 has the lowest energy but a substantially larger reasoning-score drop.
+
+5. DISCUSSION
+Quantization effects depend on task type; a single efficiency setting should not be assumed optimal for all workloads.
+
+6. CONCLUSION
+INT8 was the most balanced configuration in this benchmark, while INT4 is attractive when energy and memory constraints outweigh a moderate reasoning-quality loss.
+
+7. FUTURE WORK
+Future work should test mixed-precision layers and newer accelerators.
+
+APPENDIX A. REPRODUCIBILITY AND REPORTING NOTES
+
+The experimental workflow was logged from data preparation through analysis so that the main comparisons could be reconstructed. Random seeds, model or software versions, preprocessing decisions, and evaluation settings were fixed before the final run. Pilot executions were used only to verify the pipeline and were not mixed with the reported measurements. Intermediate outputs were retained rather than overwritten so that anomalous observations could be traced to their source.
+
+The authors also recorded several contextual variables that were not central to the primary research question. These included runtime environment information, routine validation checks, and descriptive summaries used to detect data-entry or processing mistakes. Such details improve auditability but are not necessary for understanding the headline result. Where measurements depended on hardware or institutional conditions, the paper treats absolute values as setting-specific and emphasizes the relative comparison made under matched conditions.
+
+For replication, future investigators are advised to preserve the same task definitions while independently re-running the analysis on different hardware, datasets, or student populations. The paper distinguishes direct measurements from derived estimates and avoids treating a reduction in one proxy metric as an identical reduction in environmental impact. This distinction is important because energy, latency, carbon intensity, and model quality can change at different rates.

@@ -1,0 +1,24 @@
+﻿paper_key,title,authors,year
+A,Prompt Compression for Introductory Programming Tutors,"Rahman, A.; Chen, M.; Torres, J.",2026
+B,Energy-Aware Quantization for Campus Language-Model Services,"Okafor, N.; Silva, P.; Ahmed, R.",2025
+C,Caching Repeated Language-Model Queries in a University Helpdesk,"Mensah, K.; Iqbal, S.",2025
+D,Carbon-Aware Scheduling of Generative AI Inference,"Lee, H.; Gomez, R.; Nair, V.",2026
+E,Student Reliance on AI Code Assistants in Introductory Programming,"Khan, L.; Murray, T.; Bose, S.",2025
+F,Early Student Dropout Prediction with Gradient-Boosted Trees,"Alvarez, M.; Roy, P.",2024
+G,Sequence Modeling of Student Engagement for Dropout Prediction,"Chen, Y.; Ibrahim, N.",2024
+H,Automated Formative Feedback for Graduate Statistics Students,"Park, J.; Idris, F.; Wilson, E.",2025
+I,Distilled Transformers for Energy-Efficient Edge Text Classification,"Singh, R.; Duarte, M.",2025
+J,Water-Aware Scheduling for AI Training Clusters,"Yamada, T.; Hassan, R.; Price, L.",2025
+K,Measuring Energy per Response in Large-Language-Model Inference,"Patel, S.; Rahim, N.; Carter, G.",2026
+L,"Quantized LLM Inference: Accuracy, Latency, and Energy Trade-offs","Novak, E.; Das, P.",2025
+M,Trust and Continued Use of AI Study Assistants among Undergraduates,"Bennett, C.; Chowdhury, F.; Lin, Z.",2026
+N,Techniques for Reducing the Cost of Generative-AI Inference: A Structured Review,"Garcia, P.; Kim, J.",2026
+O,How Prompt Length Shapes Response Verbosity in Instruction-Tuned Models,"Evans, D.; Karim, S.",2025
+P,Sparse Mixture-of-Experts Models for Efficient Educational Question Answering,"Foster, R.; Ali, M.; Ito, K.",2025
+Q,Eight-Bit Quantization for Sustainable Language-Model Inference,"Seo, J.; Malik, T.",2025
+R,Semantic Response Caching for Repeated LLM Requests,"Abebe, S.; Martin, G.",2025
+S,Carbon-Intensity-Aware Routing for Distributed AI Inference,"Taylor, N.; Sato, Y.",2025
+T,Patterns of AI Study-Tool Use among University Students,"Chow, R.; Ahmed, S.; Velasquez, P.",2026
+U,Retrieval-Augmented Course Question Answering with Instructor-Approved Sources,"Salim, H.; Brooks, E.",2025
+V,Interpretable Machine Learning for Hospital Readmission Prediction,"Moreno, L.; Shah, D.; Peters, A.",2025
+W,Structured Pruning for Low-Power Edge Vision,"Diaz, M.; Ito, S.; Ncube, P.",2025

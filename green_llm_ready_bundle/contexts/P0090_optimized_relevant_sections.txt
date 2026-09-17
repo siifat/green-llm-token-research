@@ -1,0 +1,8 @@
+TITLE: Measuring Energy per Response in Large-Language-Model Inference
+AUTHORS: Patel, S.; Rahim, N.; Carter, G.
+YEAR: 2026
+
+ABSTRACT
+We present a reproducible protocol for measuring energy per LLM response under controlled decoding settings. Four open models from 3B to 14B parameters were evaluated on 1,200 prompts. Energy scaled strongly with generated token count and model size. Output length explained 71% of within-model energy variation, while prompt length explained 18% after controlling for cached-prefix effects.
+6. CONCLUSION
+Response-level energy benchmarking should control model, hardware, decoding settings, input length, and output length. Token counts are useful explanatory variables but are not identical to energy.

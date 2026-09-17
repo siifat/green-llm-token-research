@@ -1,0 +1,12 @@
+TITLE: Caching Repeated Language-Model Queries in a University Helpdesk
+AUTHORS: Mensah, K.; Iqbal, S.
+YEAR: 2025
+
+ABSTRACT
+We evaluate semantic caching for a university IT and course-support chatbot. The system matched new questions against prior queries and reused an existing response when cosine similarity exceeded a tuned threshold. On 18,000 helpdesk questions, caching avoided 37% of model calls, reduced mean response energy by 29%, and lowered median latency from 3.2 to 1.1 seconds. A manual audit found a 2.4% incorrect-reuse rate, concentrated in questions containing course-specific deadlines.
+3. METHODS
+We collected 18,000 de-identified questions from a simulated university helpdesk covering account access, software installation, course registration, and common programming issues. Sentence embeddings were used for nearest-neighbor retrieval. Thresholds from 0.82 to 0.96 were tuned on 2,000 validation queries. The final threshold was 0.91. We measured model-call avoidance, GPU energy, latency, and incorrect reuse through manual review of 1,000 cached responses.
+4. RESULTS
+At the 0.91 threshold, 37% of queries were served from cache. Average energy per incoming query fell from 0.74 Wh to 0.53 Wh. Median latency fell from 3.2 s to 1.1 s. Manual review estimated 2.4% incorrect reuse; deadline-sensitive and course-specific questions caused most errors.
+6. CONCLUSION
+Semantic caching can reduce repeated LLM computation substantially, but deployment should combine similarity matching with metadata and expiration rules.

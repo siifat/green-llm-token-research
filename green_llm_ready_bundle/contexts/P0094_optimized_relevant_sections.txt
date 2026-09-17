@@ -1,0 +1,8 @@
+TITLE: How Prompt Length Shapes Response Verbosity in Instruction-Tuned Models
+AUTHORS: Evans, D.; Karim, S.
+YEAR: 2025
+
+SPECIFIC PASSAGE
+Verbose prompt framing increased mean input length from 54 to 87 tokens and mean output length from 312 to 356 tokens. Phrases requesting that the model explain everything in detail were associated with the largest increases in generated response length.
+
+Citation metadata: Evans, D., & Karim, S. (2025). How Prompt Length Shapes Response Verbosity in Instruction-Tuned Models. Synthetic study created for the controlled experiment.

@@ -1,0 +1,35 @@
+TITLE: Sparse Mixture-of-Experts Models for Efficient Educational Question Answering
+AUTHORS: Foster, R.; Ali, M.; Ito, K.
+YEAR: 2025
+
+ABSTRACT
+We evaluate sparse mixture-of-experts (MoE) language models for educational question answering. A 12-expert model activated two experts per token and matched the quality of a dense baseline while reducing active computation by 39%. Routing imbalance caused occasional latency spikes on mathematics prompts.
+
+1. INTRODUCTION
+Mixture-of-experts models increase total parameter capacity while activating only a subset of parameters for each token. This can reduce active computation, but routing, expert capacity, and load balancing become important systems concerns.
+
+2. RELATED WORK
+Sparse activation has been studied in large language models and recommendation systems. Educational QA provides a mixed workload containing factual, procedural, and reasoning-heavy requests.
+
+3. METHODS
+We evaluated a dense 7B baseline and a sparse model with 12 experts. The router selected the top two experts per token. The benchmark contained 4,000 questions from five university subjects. We tracked active parameters, router entropy, expert load balance, latency, and rubric-based answer quality.
+
+4. RESULTS
+The sparse model reduced active FLOPs by 39% and matched mean quality within 0.03 points on a five-point scale. Mathematics questions created the largest expert imbalance and the 95th percentile latency increased by 11% during those bursts.
+
+5. DISCUSSION
+Sparse models can improve average efficiency while introducing routing-related tail latency. The benchmark did not include long-context tasks.
+
+6. CONCLUSION
+Sparse expert routing can lower active computation for educational QA, but systems must monitor expert imbalance and tail latency.
+
+7. FUTURE WORK
+Future work should investigate adaptive expert capacity and long-context routing.
+
+APPENDIX A. REPRODUCIBILITY AND REPORTING NOTES
+
+The experimental workflow was logged from data preparation through analysis so that the main comparisons could be reconstructed. Random seeds, model or software versions, preprocessing decisions, and evaluation settings were fixed before the final run. Pilot executions were used only to verify the pipeline and were not mixed with the reported measurements. Intermediate outputs were retained rather than overwritten so that anomalous observations could be traced to their source.
+
+The authors also recorded several contextual variables that were not central to the primary research question. These included runtime environment information, routine validation checks, and descriptive summaries used to detect data-entry or processing mistakes. Such details improve auditability but are not necessary for understanding the headline result. Where measurements depended on hardware or institutional conditions, the paper treats absolute values as setting-specific and emphasizes the relative comparison made under matched conditions.
+
+For replication, future investigators are advised to preserve the same task definitions while independently re-running the analysis on different hardware, datasets, or student populations. The paper distinguishes direct measurements from derived estimates and avoids treating a reduction in one proxy metric as an identical reduction in environmental impact. This distinction is important because energy, latency, carbon intensity, and model quality can change at different rates.

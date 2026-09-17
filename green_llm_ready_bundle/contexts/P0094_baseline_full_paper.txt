@@ -1,0 +1,35 @@
+TITLE: How Prompt Length Shapes Response Verbosity in Instruction-Tuned Models
+AUTHORS: Evans, D.; Karim, S.
+YEAR: 2025
+
+ABSTRACT
+We test whether longer prompts cause longer model responses when the requested task is held constant. Across 1,000 paired prompts, verbose framing increased input tokens by 61% and output tokens by 14% on average. Effects were strongest when the verbose prompt repeatedly asked for completeness and detail.
+
+1. INTRODUCTION
+Prompt engineering guidance often focuses on task success, but wording can also influence generation length. We isolate prompt-length effects by constructing paired instructions with identical task requirements and different amounts of conversational framing.
+
+2. RELATED WORK
+Prior studies connect explicit length constraints to response length and show that stylistic cues affect generation. Less work isolates redundant wording while holding the requested deliverable constant.
+
+3. METHODS
+One thousand task pairs were created across explanation, coding, revision, and summarization. Each pair contained a direct prompt and a verbose counterpart with repeated context but no additional content requirement. The same model and deterministic decoding settings were used.
+
+4. RESULTS
+Verbose prompts increased mean input length from 54 to 87 tokens and mean output length from 312 to 356 tokens. Phrases such as 'explain everything in detail' and repeated requests for clarity were associated with the largest output expansion.
+
+5. DISCUSSION
+The study cannot separate all pragmatic effects of politeness and self-description from length itself, and results may vary across model families.
+
+6. CONCLUSION
+Redundant prompt framing can increase both input and output tokens even when the underlying task is unchanged.
+
+7. FUTURE WORK
+Future studies should test authentic student prompts and multilingual interactions.
+
+APPENDIX A. REPRODUCIBILITY AND REPORTING NOTES
+
+The experimental workflow was logged from data preparation through analysis so that the main comparisons could be reconstructed. Random seeds, model or software versions, preprocessing decisions, and evaluation settings were fixed before the final run. Pilot executions were used only to verify the pipeline and were not mixed with the reported measurements. Intermediate outputs were retained rather than overwritten so that anomalous observations could be traced to their source.
+
+The authors also recorded several contextual variables that were not central to the primary research question. These included runtime environment information, routine validation checks, and descriptive summaries used to detect data-entry or processing mistakes. Such details improve auditability but are not necessary for understanding the headline result. Where measurements depended on hardware or institutional conditions, the paper treats absolute values as setting-specific and emphasizes the relative comparison made under matched conditions.
+
+For replication, future investigators are advised to preserve the same task definitions while independently re-running the analysis on different hardware, datasets, or student populations. The paper distinguishes direct measurements from derived estimates and avoids treating a reduction in one proxy metric as an identical reduction in environmental impact. This distinction is important because energy, latency, carbon intensity, and model quality can change at different rates.

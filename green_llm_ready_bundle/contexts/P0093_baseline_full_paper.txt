@@ -1,0 +1,43 @@
+TITLE: Techniques for Reducing the Cost of Generative-AI Inference: A Structured Review
+AUTHORS: Garcia, P.; Kim, J.
+YEAR: 2026
+
+ABSTRACT
+This structured review organizes 96 studies on efficient generative-AI inference into four themes: model compression, serving-system optimization, workload reuse, and carbon-aware operation. The literature shows substantial efficiency gains but inconsistent reporting of energy, quality, and hardware details.
+
+1. INTRODUCTION
+As generative AI moves from experimentation to continuous deployment, inference efficiency has become a central systems problem. The literature spans model design, systems engineering, and environmental computing, making it difficult to compare techniques across communities.
+
+2. RELATED WORK
+Theme 1: Model compression. Quantization, pruning, distillation, and sparse activation reduce computation or memory use. Studies often report speed and memory, while energy reporting is less consistent.
+
+Theme 2: Serving-system optimization. Dynamic batching, speculative decoding, kernel fusion, and cache-aware scheduling improve accelerator utilization and tokens per second.
+
+Theme 3: Workload reuse. Prefix caching, semantic caching, retrieval, and response reuse avoid repeated computation when inputs overlap.
+
+Theme 4: Carbon-aware operation. Geographic routing, time shifting, and renewable-energy matching aim to reduce emissions even when energy use changes little.
+
+Across themes, studies use incompatible quality metrics and hardware, limiting direct comparison.
+
+3. METHODS
+We searched four scholarly databases for studies published from 2019 through 2025 using combinations of generative AI, inference, energy, efficiency, latency, quantization, caching, and carbon-aware computing. After duplicate removal and screening, 96 studies were coded by technique, model type, hardware, quality metric, and resource metric.
+
+4. RESULTS
+Compression was the largest theme (41 studies), followed by serving optimization (29), workload reuse (16), and carbon-aware operation (10). Only 34 studies reported direct energy measurements; 79 reported latency or throughput. Fewer than half reported both efficiency and task quality.
+
+5. DISCUSSION
+The evidence base is broad but fragmented. Energy claims cannot be compared reliably without standardized reporting of hardware, workload, output length, and quality.
+
+6. CONCLUSION
+Efficient inference is a multi-layer problem spanning models, serving, workload reuse, and energy-aware operation. Future research should report quality and resource use together.
+
+7. FUTURE WORK
+A shared benchmark should pair fixed task-quality measures with energy, latency, carbon intensity, and hardware metadata.
+
+APPENDIX A. REPRODUCIBILITY AND REPORTING NOTES
+
+The experimental workflow was logged from data preparation through analysis so that the main comparisons could be reconstructed. Random seeds, model or software versions, preprocessing decisions, and evaluation settings were fixed before the final run. Pilot executions were used only to verify the pipeline and were not mixed with the reported measurements. Intermediate outputs were retained rather than overwritten so that anomalous observations could be traced to their source.
+
+The authors also recorded several contextual variables that were not central to the primary research question. These included runtime environment information, routine validation checks, and descriptive summaries used to detect data-entry or processing mistakes. Such details improve auditability but are not necessary for understanding the headline result. Where measurements depended on hardware or institutional conditions, the paper treats absolute values as setting-specific and emphasizes the relative comparison made under matched conditions.
+
+For replication, future investigators are advised to preserve the same task definitions while independently re-running the analysis on different hardware, datasets, or student populations. The paper distinguishes direct measurements from derived estimates and avoids treating a reduction in one proxy metric as an identical reduction in environmental impact. This distinction is important because energy, latency, carbon intensity, and model quality can change at different rates.

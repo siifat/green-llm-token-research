@@ -1,0 +1,15 @@
+SOFTWARE PROJECT MEETING FACTS
+Project: Campus Events Mobile App
+Meeting date: 17 September 2026
+Attendees: Aisha Rahman, Daniel Kim, Farhan Ali, Mei Chen
+Agenda: choose database schema; assign Sprint 3 tasks
+Decisions:
+- Use PostgreSQL with four core tables: users, events, registrations, notifications.
+- Use UUID primary keys.
+- Store event images in object storage and keep only image URLs in the database.
+Actions:
+- Aisha: draft schema migration by 19 September.
+- Daniel: implement event CRUD API by 22 September.
+- Farhan: build registration endpoints by 22 September.
+- Mei: create notification table and test cases by 21 September.
+Next meeting: 23 September 2026.

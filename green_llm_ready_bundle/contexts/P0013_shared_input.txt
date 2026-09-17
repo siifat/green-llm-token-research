@@ -1,0 +1,7 @@
+BAR-CHART INPUT: Average monthly electricity consumption by residence hall
+Hall A: 420 kWh
+Hall B: 510 kWh
+Hall C: 390 kWh
+Hall D: 620 kWh
+
+Context note: Hall D is the largest and oldest residence hall; Hall C is the smallest. The chart reports totals, not per-student consumption.
