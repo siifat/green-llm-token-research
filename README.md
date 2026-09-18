@@ -50,6 +50,8 @@ Academic classification is based on the **purpose and context** of the interacti
 
 # Methodology
 
+![Methodology](figures/Methodology-GC.png)
+
 ## 1. Dataset Preparation
 
 A larger pool of candidate prompt pairs was first prepared across the five categories. For the final experiment, **20 prompt pairs from each category** were selected, giving **100 tasks**.
